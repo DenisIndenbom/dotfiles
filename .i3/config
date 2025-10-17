@@ -1,0 +1,177 @@
+# --- MODIFIER ---
+set $mod Mod4  # Super (Windows) key
+
+# --- AUTOSTART ---
+exec --no-startup-id ~/.config/scripts/system/autostart.sh
+
+# --- APPEARANCE ---
+font pango:monospace 8
+
+# Gaps
+gaps inner 10
+gaps outer 4
+smart_gaps off  # Disable gaps when only one window
+
+# Borders
+default_border pixel 0
+for_window [tiling]   border pixel 2
+for_window [floating] border pixel 2
+smart_borders on
+
+# Color Scheme (Catppuccin)
+# border, background, text, indicator, child_border
+client.focused          #cad3f5 #cad3f5 #cad3f5 #cad3f5
+client.focused_inactive #24273a #24273a #24273a #24273a
+client.unfocused        #24273a #24273a #24273a #24273a
+client.urgent           #E78284 #E78284 #E78284 #E78284
+client.placeholder      #24273a #24273a #24273a #24273a
+
+# --- WINDOW RULES ---
+for_window [class="TelegramDesktop"] floating enable
+for_window [class="firefox"] {
+    floating enable
+    resize set 1600 900
+    move absolute position center
+}
+for_window [class="Viewnior"] {
+    floating enable
+    move absolute position center
+}
+
+# --- WINDOW MANAGEMENT ---
+floating_modifier $mod     # Use $mod to drag floating windows
+tiling_drag modifier titlebar  # Drag tiling windows by titlebar
+
+# --- TERMINAL ---
+bindsym $mod+Return exec --no-startup-id ~/.config/scripts/utilities/terminal.sh
+
+# --- MENUS ---
+bindsym $mod+a         exec --no-startup-id ~/.config/scripts/menu/launcher.sh drun
+bindsym $mod+r         exec --no-startup-id ~/.config/scripts/menu/launcher.sh run
+bindsym $mod+w         exec --no-startup-id ~/.config/scripts/menu/launcher.sh window
+bindsym $mod+p         exec --no-startup-id ~/.config/scripts/menu/power.sh
+bindsym $mod+Shift+f   exec --no-startup-id ~/.config/scripts/menu/launcher.sh filebrowser
+bindsym $mod+Shift+n   exec --no-startup-id ~/.config/scripts/menu/network.py
+bindsym $mod+Shift+p   exec --no-startup-id ~/.config/scripts/menu/pallete.sh
+bindsym $mod+Shift+s   exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --menu
+bindsym $mod+Shift+r   exec --no-startup-id ~/.config/scripts/utilities/screenrecord.sh --menu
+
+# --- UTILITIES ---
+bindsym $mod+g           exec --no-startup-id ~/.config/scripts/utilities/color-picker.sh
+bindsym $mod+Shift+Alt+L exec --no-startup-id ~/.config/scripts/utilities/lockscreen.sh
+
+# --- SCREENSHOTS ---
+bindsym Print           exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --shot
+bindsym $mod+Alt+w      exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --window
+bindsym $mod+Alt+a      exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --area
+bindsym $mod+Ctrl+t     exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --timer
+
+# --- SCREEN RECORDING ---
+# (Audio + No-audio, Area, Timer variants)
+bindsym $mod+Alt+r         exec --no-startup-id ~/.config/scripts/utilities/screenrecord.sh --capture
+bindsym $mod+Alt+s         exec --no-startup-id ~/.config/scripts/utilities/screenrecord.sh --stop
+bindsym $mod+Alt+Shift+r   exec --no-startup-id ~/.config/scripts/utilities/screenrecord.sh --capture --noaudio
+bindsym $mod+Alt+Shift+a   exec --no-startup-id ~/.config/scripts/utilities/screenrecord.sh --area --noaudio
+bindsym $mod+Alt+Shift+t   exec --no-startup-id ~/.config/scripts/utilities/screenrecord.sh --timer --noaudio
+bindsym $mod+Alt+Ctrl+a    exec --no-startup-id ~/.config/scripts/utilities/screenrecord.sh --area
+bindsym $mod+Alt+Ctrl+t    exec --no-startup-id ~/.config/scripts/utilities/screenrecord.sh --timer
+
+# --- BRIGHTNESS & VOLUME ---
+bindsym XF86MonBrightnessUp   exec --no-startup-id ~/.config/scripts/utilities/brightness.sh --up
+bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/scripts/utilities/brightness.sh --down
+
+bindsym XF86AudioRaiseVolume  exec --no-startup-id ~/.config/scripts/utilities/volume.sh --up
+bindsym XF86AudioLowerVolume  exec --no-startup-id ~/.config/scripts/utilities/volume.sh --down
+bindsym XF86AudioMute         exec --no-startup-id ~/.config/scripts/utilities/volume.sh --mute
+
+# --- MEDIA CONTROLS ---
+set $players spotify,%any,firefox,chromium,brave,mpd
+bindsym XF86AudioNext  exec --no-startup-id playerctl -p $players next
+bindsym XF86AudioPrev  exec --no-startup-id playerctl -p $players previous
+bindsym XF86AudioPlay  exec --no-startup-id playerctl -p $players play-pause
+bindsym XF86AudioStop  exec --no-startup-id playerctl -a stop
+
+# --- BASIC KEYBINDINGS ---
+bindsym $mod+Shift+q kill  # Close window
+
+# Focus movement
+bindsym $mod+Left  focus left
+bindsym $mod+Down  focus down
+bindsym $mod+Up    focus up
+bindsym $mod+Right focus right
+
+# Window movement
+bindsym $mod+Shift+Left  move left
+bindsym $mod+Shift+Down  move down
+bindsym $mod+Shift+Up    move up
+bindsym $mod+Shift+Right move right
+
+# Layout controls
+bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+f fullscreen toggle
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Floating & focus toggles
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space       focus mode_toggle
+bindsym $mod+a           focus parent
+
+# --- WORKSPACES ---
+# Define workspace names
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# Workspace switching (loop version)
+set_from_resource $i 1 10
+bindsym $mod+1  workspace number $ws1
+bindsym $mod+2  workspace number $ws2
+bindsym $mod+3  workspace number $ws3
+bindsym $mod+4  workspace number $ws4
+bindsym $mod+5  workspace number $ws5
+bindsym $mod+6  workspace number $ws6
+bindsym $mod+7  workspace number $ws7
+bindsym $mod+8  workspace number $ws8
+bindsym $mod+9  workspace number $ws9
+bindsym $mod+0  workspace number $ws10
+
+# Move containers between workspaces
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# --- SYSTEM CONTROLS ---
+bindsym $mod+Shift+c reload   # Reload config
+bindsym $mod+Shift+r restart  # Restart i3 in place
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3 session?' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# --- RESIZE MODE ---
+mode "resize" {
+    bindsym Left  resize shrink width 10 px or 10 ppt
+    bindsym Down  resize grow   height 10 px or 10 ppt
+    bindsym Up    resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow   width 10 px or 10 ppt
+
+    # Exit resize mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
