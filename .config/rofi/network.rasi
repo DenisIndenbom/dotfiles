@@ -1,3 +1,4 @@
+network.rasi
 configuration {
     show-icons: false;
 }
@@ -20,75 +21,71 @@ configuration {
 window {
     width: 400px;
     height: 500px;
-    border-radius: 10;
+    border-radius: 0;
     border: 0;
-    padding: 15;
+    padding: 10;
     background-color: @mantle;
-    location: center;
-    anchor: center;
 }
 
 mainbox {
     background-color: @mantle;
     children: [inputbar, message, listview];
-    spacing: 8;
-    orientation: vertical;
+    padding: 0;
+}
+
+listview {
+    scrollbar: false;
+    padding: 2 0;
+    background-color: @mantle;
+    columns: 1;
+    lines: 7;
+    margin: 8 0 0 0;
 }
 
 inputbar {
-    children: [prompt-icon, entry];
+    children: [prompt, entry];
     background-color: @surface0;
     border-radius: 10;
-    padding: 6 10;
-    spacing: 8;
-    orientation: horizontal;
-    vertical-align: 0.5;
+    margin: 10 0 10 0;
 }
 
-prompt-icon {
-    type: textbox;
-    str: "";
-    font: "Symbols Nerd Font 11";
-    background-color: transparent;
-    text-color: @accent;
-    padding: 5 15 0 10;
-    expand: false;
+prompt {
+    font: "Symbols Nerd Font 10";
+    background-color: @surface0;
+    text-color: @text;
+    enabled: true;
+    border-radius: 0;
+    padding: 5 10 0 10;
 }
 
 entry {
     background-color: transparent;
     text-color: @text;
     placeholder-color: @subtext0;
-    border-radius: 6;
-    padding: 4 8;
+    border-radius: 0;
     placeholder: "Connect to a network...";
     blink: false;
-    expand: true;
-}
-
-listview {
-    scrollbar: false;
-    padding: 10 0;
-    background-color: @mantle;
-    columns: 1;
-    lines: 6;
-    spacing: 6;
-    fixed-height: true;
-    fixed-columns: true;
+    padding: 4;
 }
 
 element {
     background-color: transparent;
-    text-color: @text;
-    padding: 8 10;
-    border-radius: 8;
+    padding: 10;
+    border-radius: 10;
 }
 
 element-text {
     background-color: inherit;
     text-color: inherit;
     expand: true;
+    horizontal-align: 0;
     vertical-align: 0.5;
+}
+
+element-icon {
+    background-color: inherit;
+    text-color: @text;
+    padding: 0 10 0 0;
 }
 
 element.normal.normal {
