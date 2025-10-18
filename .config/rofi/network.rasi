@@ -1,143 +1,145 @@
 configuration {
-  show-icons: false;
+    show-icons: false;
 }
 
 @import "colors.rasi"
 @import "fonts.rasi"
 
 * {
-  font: "JetBrainsMono 13";
-  
-  background-color: @base;
-  separatorcolor: transparent;
-  
-  border: 0;
-  margin: 0;
-  padding: 0;
-  spacing: 0;
+    font: "JetBrainsMono 13";
+
+    background-color: @base;
+    separatorcolor: transparent;
+
+    border: 0;
+    margin: 0;
+    padding: 0;
+    spacing: 0;
 }
 
 window {
-  width: 530px;
-  height: auto;
-  border-radius: 8px;
-  border: 2px solid @mantle;
-  padding: 25px;
-  background-color: @base;
-  location: center;
-  anchor: center;
+    width: 400px;
+    height: 500px;
+    border-radius: 10;
+    border: 0;
+    padding: 15;
+    background-color: @mantle;
+    location: center;
+    anchor: center;
 }
 
 mainbox {
-  background-color: transparent;
-  children: [inputbar, message, listview];
-  spacing: 0px;
-  orientation: vertical;
+    background-color: @mantle;
+    children: [inputbar, message, listview];
+    spacing: 8;
+    orientation: vertical;
 }
 
 inputbar {
-  children: [textbox-prompt-colon, entry];
-  background-color: transparent;
-  spacing: 10px;
-  padding: 20px;
+    children: [textbox-prompt-colon, entry];
+    background-color: @surface0;
+    border-radius: 10;
+    padding: 10 12;
+    spacing: 10;
 }
 
 textbox-prompt-colon {
-  font: "JetBrainsMono-Bold 12";
-  background-color: @accent;
-  text-color: @mantle;
-  padding: 12px;
-  border-radius: 100%;
-  horizontal-align: 0.5;
-  vertical-align: 0.5;
-  str: " ";
+    font: "Symbols Nerd Font 11";
+    str: "";
+    background-color: @accent;
+    text-color: @mantle;
+    border-radius: 100%;
+    padding: 6 8;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+    width: 26px;
+    height: 26px;
 }
 
 entry {
-  background-color: @mantle;
-  text-color: @text;
-  placeholder-color: @text;
-  border-radius: 80%;
-  padding: 12px 16px;
-  placeholder: "...";
-  blink: false;
-  expand: true;
+    background-color: transparent;
+    text-color: @text;
+    placeholder-color: @subtext0;
+    border-radius: 6;
+    padding: 4 8;
+    placeholder: "Connect to a network...";
+    blink: false;
+    expand: true;
 }
 
 listview {
-  scrollbar: false;
-  padding: 20px 5px;
-  background-color: transparent;
-  columns: 1;
-  lines: 5;
-  spacing: 15px;
-  cycle: true;
-  fixed-height: true;
-  fixed-columns: true;
+    scrollbar: false;
+    padding: 10 0;
+    background-color: @mantle;
+    columns: 1;
+    lines: 6;
+    spacing: 6;
+    fixed-height: true;
+    fixed-columns: true;
 }
 
 element {
-  background-color: transparent;
-  text-color: @text;
-  padding: 10px;
-  border-radius: 8px;
+    background-color: transparent;
+    text-color: @text;
+    padding: 8 10;
+    border-radius: 8;
 }
 
 element-text {
-  background-color: inherit;
-  text-color: inherit;
-  vertical-align: 0.5;
+    background-color: inherit;
+    text-color: inherit;
+    expand: true;
+    vertical-align: 0.5;
 }
 
 element.normal.normal {
-  background-color: transparent;
-  text-color: @text;
+    background-color: @mantle;
+    text-color: @text;
 }
-
 element.normal.urgent {
-  background-color: @red;
-  text-color: @mantle;
+    background-color: @mantle;
+    text-color: @red;
 }
-
 element.normal.active {
-  background-color: @accent;
-  text-color: @mantle;
+    background-color: @mantle;
+    text-color: @blue;
 }
-
 element.selected.normal {
-  background-color: @accent;
-  text-color: @mantle;
+    background-color: @surface1;
+    text-color: @text;
 }
-
 element.selected.urgent {
-  background-color: @red;
-  text-color: @mantle;
+    background-color: @surface1;
+    text-color: @red;
 }
-
 element.selected.active {
-  background-color: @green;
-  text-color: @mantle;
+    background-color: @surface1;
+    text-color: @blue;
+}
+element.alternate.normal {
+    background-color: @base;
+    text-color: @subtext1;
+}
+element.alternate.urgent {
+    background-color: @base;
+    text-color: @red;
+}
+element.alternate.active {
+    background-color: @base;
+    text-color: @blue;
 }
 
 message {
-  background-color: @mantle;
-  text-color: @text;
-  margin: 5px;
-  padding: 2px;
-  border-radius: 8px;
-}
-
-textbox {
-  background-color: @mantle;
-  text-color: @text;
-  padding: 12px;
-  border-radius: 8px;
-  vertical-align: 0.5;
+    background-color: @surface0;
+    text-color: @text;
+    padding: 8 10;
+    border-radius: 8;
+    margin: 4 0;
 }
 
 error-message {
-  background-color: @red;
-  text-color: @mantle;
-  padding: 12px;
-  border-radius: 20px;
+    background-color: @red;
+    text-color: @mantle;
+    padding: 10;
+    border-radius: 10;
 }
