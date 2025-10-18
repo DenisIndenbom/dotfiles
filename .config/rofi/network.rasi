@@ -36,24 +36,23 @@ mainbox {
 }
 
 inputbar {
-    children: [textbox-prompt-colon, entry];
+    children: [prompt-icon, entry];
     background-color: @surface0;
     border-radius: 10;
-    padding: 10 12;
-    spacing: 10;
+    padding: 6 10;
+    spacing: 8;
+    orientation: horizontal;
+    vertical-align: 0.5;
 }
 
-textbox-prompt-colon {
-    font: "Symbols Nerd Font 11";
+prompt-icon {
+    type: textbox;
     str: "";
-    background-color: @accent;
-    text-color: @mantle;
-    border-radius: 100%;
-    padding: 6 8;
-    vertical-align: 0.5;
-    horizontal-align: 0.5;
-    width: 26px;
-    height: 26px;
+    font: "Symbols Nerd Font 11";
+    background-color: transparent;
+    text-color: @accent;
+    padding: 5 15 0 10;
+    expand: false;
 }
 
 entry {
