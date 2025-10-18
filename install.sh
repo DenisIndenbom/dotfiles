@@ -7,11 +7,13 @@ pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber alsa-utils pamix
 feh brightnessctl bluez-utils i3lock-color \
 yad xclip stalonetray maim gpick imagemagick ffmpeg \
 ttf-jetbrains-mono-nerd ttf-jetbrains-mono ttf-sarasa-gothic ttf-roboto \
-mpd mpdris2 ncmpcpp playerctl zscroll-git \
+mpd mpdris2 ncmpcpp playerctl \
 polkit-gnome xfce4-power-manager \
 libnotify notify-send-py \
-xdg-utils xdg-user-dirs xdo xsettingsd \
+xdo xsettingsd \
 python3 python-gobject yad"
+
+sudo pacman -S base-devel
 
 yay -S $packages --needed
 

@@ -9,7 +9,7 @@ configuration {
 @import "fonts.rasi"
 
 * {
-	font: "JetBrainsMono 10";
+	font: "JetBrainsMono 13";
 
 	background-color: @base;
 	separatorcolor: transparent;

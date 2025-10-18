@@ -33,7 +33,7 @@ case "$chosen" in
     sh "$HOME/.config/scripts/utilities/lockscreen.sh"
   ;;
   "$suspend")
-    execute "playerctl -a stop && systemctl suspend" "suspend"
+    execute "systemctl suspend" "suspend"
   ;;
   "$logout")
     execute "kill -9 -1" "quit"
