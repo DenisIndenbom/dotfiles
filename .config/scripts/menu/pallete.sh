@@ -16,16 +16,16 @@ chosen="$(printf "Latte\0icon\037%s\nFrappe\0icon\037%s\nMacchiato\0icon\037%s\n
 
 case $chosen in
   Latte)
-    sh "$script_dir"/../pallete-changer.sh -a latte
+    sh "$script_dir"/../utilities/pallete-changer.sh -a latte
   ;;
   Frappe)
-    sh "$script_dir"/../pallete-changer.sh -a frappe
+    sh "$script_dir"/../utilities/pallete-changer.sh -a frappe
   ;;
   Macchiato)
-    sh "$script_dir"/../pallete-changer.sh -a macchiato
+    sh "$script_dir"/../utilities/pallete-changer.sh -a macchiato
   ;;
   Mocha)
-    sh "$script_dir"/../pallete-changer.sh -a mocha
+    sh "$script_dir"/../utilities/pallete-changer.sh -a mocha
   ;;
 esac
 

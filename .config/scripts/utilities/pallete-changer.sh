@@ -1,22 +1,22 @@
 #!/bin/sh
 
 export PATH="$HOME/.local/bin:$PATH"
-catconfigs="$HOME/.config"
+config="$HOME/.config"
 
-screenshot="$catconfigs/scripts/utilities/screenshot.sh"
-screenrecord="$catconfigs/scripts/utilities/screenrecord.sh"
-lockscreen="$catconfigs/scripts/utilities/lockscreen.sh"
-volume="$catconfigs/scripts/utilities/volume.sh"
-brightness="$catconfigs/scripts/utilities/brightness.sh"
-accent="$catconfigs/scripts/menu/accent.sh"
+screenshot="$config/scripts/utilities/screenshot.sh"
+screenrecord="$config/scripts/utilities/screenrecord.sh"
+lockscreen="$config/scripts/utilities/lockscreen.sh"
+volume="$config/scripts/utilities/volume.sh"
+brightness="$config/scripts/utilities/brightness.sh"
+accent="$config/scripts/menu/accent.sh"
 
-network="$catconfigs/rofi/network.ini"
-alacritty="$catconfigs/alacritty/alacritty.yml"
-dunst="$catconfigs/dunst/dunstrc"
-stalonetray="$catconfigs/polybar/stalonetrayrc"
-polybar="$catconfigs/polybar/config.ini"
-rofi="$catconfigs/rofi/colors.rasi"
-wallpapers="$catconfigs/wallpapers"
+network="$config/rofi/network.ini"
+alacritty="$config/alacritty/alacritty.yml"
+dunst="$config/dunst/dunstrc"
+stalonetray="$config/polybar/stalonetrayrc"
+polybar="$config/polybar/config.ini"
+rofi="$config/rofi/colors.rasi"
+wallpapers="$config/wallpapers"
 
 themes="$HOME/.themes"
 gtk_4="$HOME/.config/gtk-4.0"
@@ -67,7 +67,7 @@ notification () {
     ;;
   esac
 
-  sh "$catconfigs/scripts/system/notifications.sh"
+  sh "$config/scripts/system/notifications.sh"
 }
 
 panel () {
@@ -89,7 +89,7 @@ panel () {
     ;;
   esac
 
-  sh "$catconfigs/scripts/system/panel.sh"
+  sh "$config/scripts/system/panel.sh"
 }
 
 terminal () {
