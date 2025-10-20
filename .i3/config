@@ -37,26 +37,23 @@ for_window [class="Viewnior"] floating enable
 for_window [class="Viewnior"] move absolute position center
 
 # --- WINDOW MANAGEMENT ---
-floating_modifier $mod     # Use $mod to drag floating windows
-tiling_drag modifier titlebar  # Drag tiling windows by titlebar
+floating_modifier $mod
+tiling_drag modifier titlebar
 
 # --- TERMINAL ---
 bindsym $mod+Return exec --no-startup-id ~/.config/scripts/utilities/terminal.sh
 
 # --- MENUS ---
-bindsym $mod+a         exec --no-startup-id ~/.config/scripts/menu/launcher.sh drun
-bindsym $mod+r         exec --no-startup-id ~/.config/scripts/menu/launcher.sh run
-bindsym $mod+w         exec --no-startup-id ~/.config/scripts/menu/launcher.sh window
+bindsym $mod+d         exec --no-startup-id ~/.config/scripts/menu/launcher.sh drun
 bindsym $mod+p         exec --no-startup-id ~/.config/scripts/menu/power.sh
-bindsym $mod+Shift+f   exec --no-startup-id ~/.config/scripts/menu/launcher.sh filebrowser
-bindsym $mod+Shift+n   exec --no-startup-id ~/.config/scripts/menu/network.py
+bindsym $mod+Shift+n   exec --no-startup-id ~/.config/scripts/menu/network.sh
 bindsym $mod+Shift+p   exec --no-startup-id ~/.config/scripts/menu/pallete.sh
 bindsym $mod+Shift+s   exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --menu
 bindsym $mod+Shift+r   exec --no-startup-id ~/.config/scripts/utilities/screenrecord.sh --menu
 
 # --- UTILITIES ---
 bindsym $mod+g           exec --no-startup-id ~/.config/scripts/utilities/color-picker.sh
-bindsym $mod+Shift+Alt+L exec --no-startup-id ~/.config/scripts/utilities/lockscreen.sh
+bindsym $mod+L           exec --no-startup-id ~/.config/scripts/utilities/lockscreen.sh
 
 # --- SCREENSHOTS ---
 bindsym Print           exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --shot
@@ -90,7 +87,7 @@ bindsym XF86AudioPlay  exec --no-startup-id playerctl -p $players play-pause
 bindsym XF86AudioStop  exec --no-startup-id playerctl -a stop
 
 # --- BASIC KEYBINDINGS ---
-bindsym $mod+Shift+q kill  # Close window
+bindsym $mod+Shift+q kill
 
 # Focus movement
 bindsym $mod+Left  focus left
