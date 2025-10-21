@@ -7,8 +7,8 @@ colorscheme=mocha
 clock=$(date +%Y-%m-%d-%I-%M-%S)
 geometry=$(xrandr | head -n1 | cut -d',' -f2 | tr -d '[:blank:],current')
 
-dir="$(xdg-user-dir PICTURES)/Screenshots"
-file="Screenshot_${clock}_${geometry}.png"
+dir="$(xdg-user-dir PICTURES)/screenshots"
+file="screenshot_${clock}_${geometry}.png"
 
 [ ! -d "$dir" ] && mkdir -p "$dir"
 
@@ -19,8 +19,6 @@ notify_user() {
 		-i "$icon_path/$colorscheme/clipboard.svg" \
 		-u low \
 		-r 699 "Clipboard" "Screenshot saved on clipboard"
-
-	xdg-open "$dir/$file"
 
 	if [ -e "$dir/$file" ]; then
 		notify-send -a Screenshot -u low -i "$dir/$file" "Screenshot Saved"
@@ -41,23 +39,9 @@ countdown() {
 	done
 }
 
-effects() {
-	convert "$file" +antialias \
-		\( +clone -alpha extract \
-		-draw 'fill black polygon 0,0 0,20 20,0 fill white circle 20,20 20,0' \
-		\( +clone -flip \) -compose Multiply -composite \
-		\( +clone -flop \) -compose Multiply -composite \
-		\) -alpha off -compose CopyOpacity -composite "$file"
-
-	convert "$file" \
-		\( +clone -background black -shadow 69x20+0+10 \) \
-		+swap -background none -layers merge +repage "$file"
-}
-
 screen() {
 	cd "$dir" || exit
 	maim -u -f png "$file"
-	effects
 	xclip -selection clipboard -t image/png -i "$file"
 	notify_user
 }
@@ -65,7 +49,6 @@ screen() {
 window() {
 	cd "$dir" || exit
 	maim -u -f png -i "$(xdotool getactivewindow)" "$file"
-	effects
 	xclip -selection clipboard -t image/png -i "$file"
 	notify_user
 }
@@ -73,7 +56,6 @@ window() {
 area() {
 	cd "$dir" || exit
 	maim -u -f png -s -b 2 -c 0.35,0.55,0.85,0.25 -l "$file"
-	effects
 	xclip -selection clipboard -t image/png -i "$file"
 	notify_user
 }
@@ -99,7 +81,7 @@ menu() {
 	config="$HOME/.config/rofi/screen.rasi"
 
 	screen=""
-	area="󰋫"
+	area="󰗆"
 	window=""
 	timer="󰄉"
 
@@ -126,13 +108,13 @@ menu() {
 docs() {
 	echo "
 Usage:	screenshot [Options]
-    --help	-	Prints this message
+    --help	 -	Prints this message
 Options:
-    --shot	-	Take screenshot of the screen
-    --window	-	Take screenshot of the focused window
-    --area	-	Take screenshot of the selected area
-    --timer	-	Set a custom timer to take a screenshot
-    --menu	-	Opens a gui selector
+    --shot	 -	Take screenshot of the screen
+    --window -  Take screenshot of the focused window
+    --area	 -	Take screenshot of the selected area
+    --timer	 -	Set a custom timer to take a screenshot
+    --menu	 -	Opens a gui selector
 	"
 }
 

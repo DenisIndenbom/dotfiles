@@ -45,11 +45,10 @@ element {
   cursor:                         pointer;
 }
 
-
 element-text {
   background-color: 				      inherit;
   text-color:       				      inherit;
-	font:							              "Phosphor 16";
+	font:							              "Symbols Nerd Font 18";
   horizontal-align:               0.5;
   vertical-align:                 0.5;
   margin:                         0px;

@@ -1,5 +1,5 @@
 # --- MODIFIER ---
-set $mod Mod4  # Super (Windows) key
+set $mod Mod4
 
 # --- AUTOSTART ---
 exec --no-startup-id ~/.config/scripts/system/autostart.sh
@@ -10,7 +10,7 @@ font pango:monospace 8
 # Gaps
 gaps inner 10
 gaps outer 4
-smart_gaps off  # Disable gaps when only one window
+smart_gaps off
 
 # Borders
 default_border pixel 0
@@ -41,7 +41,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # --- TERMINAL ---
-bindsym $mod+Return exec --no-startup-id ~/.config/scripts/utilities/terminal.sh
+bindsym $mod+Return    exec --no-startup-id ~/.config/scripts/utilities/terminal.sh
 
 # --- MENUS ---
 bindsym $mod+d         exec --no-startup-id ~/.config/scripts/menu/launcher.sh drun
@@ -49,27 +49,16 @@ bindsym $mod+p         exec --no-startup-id ~/.config/scripts/menu/power.sh
 bindsym $mod+Shift+n   exec --no-startup-id ~/.config/scripts/menu/network.sh
 bindsym $mod+Shift+p   exec --no-startup-id ~/.config/scripts/menu/pallete.sh
 bindsym $mod+Shift+s   exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --menu
-bindsym $mod+Shift+r   exec --no-startup-id ~/.config/scripts/utilities/screenrecord.sh --menu
 
 # --- UTILITIES ---
-bindsym $mod+g           exec --no-startup-id ~/.config/scripts/utilities/color-picker.sh
-bindsym $mod+L           exec --no-startup-id ~/.config/scripts/utilities/lockscreen.sh
+bindsym $mod+g         exec --no-startup-id ~/.config/scripts/utilities/color-picker.sh
+bindsym $mod+L         exec --no-startup-id ~/.config/scripts/utilities/lockscreen.sh
 
 # --- SCREENSHOTS ---
-bindsym Print           exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --shot
-bindsym $mod+Alt+w      exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --window
-bindsym $mod+Alt+a      exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --area
-bindsym $mod+Ctrl+t     exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --timer
-
-# --- SCREEN RECORDING ---
-# (Audio + No-audio, Area, Timer variants)
-bindsym $mod+Alt+r         exec --no-startup-id ~/.config/scripts/utilities/screenrecord.sh --capture
-bindsym $mod+Alt+s         exec --no-startup-id ~/.config/scripts/utilities/screenrecord.sh --stop
-bindsym $mod+Alt+Shift+r   exec --no-startup-id ~/.config/scripts/utilities/screenrecord.sh --capture --noaudio
-bindsym $mod+Alt+Shift+a   exec --no-startup-id ~/.config/scripts/utilities/screenrecord.sh --area --noaudio
-bindsym $mod+Alt+Shift+t   exec --no-startup-id ~/.config/scripts/utilities/screenrecord.sh --timer --noaudio
-bindsym $mod+Alt+Ctrl+a    exec --no-startup-id ~/.config/scripts/utilities/screenrecord.sh --area
-bindsym $mod+Alt+Ctrl+t    exec --no-startup-id ~/.config/scripts/utilities/screenrecord.sh --timer
+bindsym Print          exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --shot
+bindsym $mod+Alt+w     exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --window
+bindsym $mod+Alt+a     exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --area
+bindsym $mod+Ctrl+t    exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --timer
 
 # --- BRIGHTNESS & VOLUME ---
 bindsym XF86MonBrightnessUp   exec --no-startup-id ~/.config/scripts/utilities/brightness.sh --up
@@ -153,8 +142,8 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # --- SYSTEM CONTROLS ---
-bindsym $mod+Shift+c reload   # Reload config
-bindsym $mod+Shift+r restart  # Restart i3 in place
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3 session?' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # --- RESIZE MODE ---
