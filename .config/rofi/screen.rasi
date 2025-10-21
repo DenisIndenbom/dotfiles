@@ -1,61 +1,69 @@
 configuration {
-  location:                       4;
-  show-icons:                     false;
-  click-to-exit: 					        true;
+  location: 4;
+  show-icons: false;
+  click-to-exit: true;
 }
 
 @import "fonts"
 @import "colors"
 
 window {
-  transparency:                   "real";
-  background-color:               @base;
-  text-color:                     @text;
-  border:                         2px solid;
-  border-color:                   @mantle;
-  border-radius:                  12px;
-  width:                          100px;
-  x-offset:                       -10;
+  transparency: "real";
+  background-color: @base;
+  text-color: @text;
+  border: 2px solid;
+  border-color: @mantle;
+  border-radius: 12px;
+  width: 100px;
+  x-offset: -10;
 }
 
 mainbox {
-  background-color:               @base;
-  spacing:                       	10px;
-  padding:                        20px;
-  children:                       [ listview ];
+  background-color: @base;
+  spacing: 10px;
+  padding: 20px;
+  children: [ listview ];
+  orientation: vertical;
+  halign: center;
+  valign: center;
 }
 
 listview {
-  background-color:               @mantle;
-  border-radius:                  100%;
-  columns:                        1;
-  cycle:                          true;
-  dynamic:                        true;
-  fixed-height:                   true;
-  fixed-columns:                  true;
-  layout:                         vertical;
+  background-color: @mantle;
+  border-radius: 12px;
+  columns: 1;
+  cycle: true;
+  dynamic: true;
+  fixed-height: true;
+  fixed-columns: true;
+  layout: vertical;
+  spacing: 15px;
+  halign: center;
+  valign: center;
 }
 
 element {
-  background-color:               transparent;
-  text-color:                     @text;
-  orientation:                    horizontal;
-  border-radius:                  100%;
-  padding:                        14px;
-  cursor:                         pointer;
+  background-color: transparent;
+  text-color: @text;
+  orientation: horizontal;
+  border-radius: 100%;
+  padding: 16px;
+  cursor: pointer;
+  halign: center;
+  valign: center;
 }
 
 element-text {
-  background-color: 				      inherit;
-  text-color:       				      inherit;
-	font:							              "Symbols Nerd Font 18";
-  horizontal-align:               0.5;
-  vertical-align:                 0.5;
-  margin:                         0px;
-  cursor:                         inherit;
+  background-color: inherit;
+  text-color: inherit;
+  font: "Symbols Nerd Font 22";
+  horizontal-align: 0.5;
+  vertical-align: 0.5;
+  margin: 0px;
+  cursor: inherit;
 }
 
 element selected.normal {
-  background-color:               @accent;
-  text-color:                     @mantle;
+  background-color: @accent;
+  text-color: @mantle;
 }
