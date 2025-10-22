@@ -9,7 +9,7 @@ configuration {
 @import "fonts.rasi"
 
 * {
-	font: "JetBrainsMono 13";
+	font: "JetBrainsMono 18";
 
 	background-color: @base;
 	separatorcolor: transparent;
@@ -21,8 +21,8 @@ configuration {
 }
 
 window {
-	width: 400px;
-	height: 500px;
+	width: 25%;
+	height: 50%;
 	border-radius: 0;
 	border: 0;
 	padding: 10;
@@ -52,7 +52,7 @@ inputbar {
 }
 
 prompt {
-	font: "Symbols Nerd Font 10";
+	font: "Symbols Nerd Font 18";
 	background-color: @surface0;
 	text-color: @text;
 	enabled: true;

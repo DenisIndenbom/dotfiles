@@ -1,27 +1,24 @@
 configuration {
-    show-icons: false;
+    show-icons: true;
 }
 
 @import "colors.rasi"
 @import "fonts.rasi"
 
 * {
-    font: "JetBrainsMono 13";
-
+    font: "JetBrainsMono Nerd Font 16";
     background-color: @base;
-    separatorcolor: transparent;
-
+    text-color: @text;
     border: 0;
     margin: 0;
     padding: 0;
-    spacing: 0;
 }
 
 window {
-    width: 400px;
-    height: 500px;
-    border-radius: 0;
-    border: 0;
+    width: 28%;
+    height: 45%;
+    border-radius: 12;
+    border: 2 solid @surface0;
     padding: 10;
     background-color: @mantle;
 }
@@ -29,31 +26,22 @@ window {
 mainbox {
     background-color: @mantle;
     children: [inputbar, message, listview];
-    padding: 0;
-}
-
-listview {
-    scrollbar: false;
-    padding: 2 0;
-    background-color: @mantle;
-    columns: 1;
-    lines: 7;
-    margin: 8 0 0 0;
+    spacing: 6;
+    padding: 8;
 }
 
 inputbar {
     children: [prompt, entry];
     background-color: @surface0;
-    border-radius: 10;
-    margin: 10 0 10 0;
+    border-radius: 12;
+    padding: 6 10;
+    margin: 4 0;
 }
 
 prompt {
-    font: "Symbols Nerd Font 10";
-    background-color: @surface0;
-    text-color: @text;
-    enabled: true;
-    border-radius: 0;
+    font: "Symbols Nerd Font 18";
+    background-color: transparent;
+    text-color: @blue;
     padding: 5 10 0 10;
 }
 
@@ -61,20 +49,31 @@ entry {
     background-color: transparent;
     text-color: @text;
     placeholder-color: @subtext0;
-    border-radius: 0;
-    placeholder: "Connect to a network...";
+    placeholder: "Search Wi-Fi networks...";
     blink: false;
-    padding: 4;
+    padding: 2 0;
+}
+
+listview {
+    background-color: transparent;
+    columns: 1;
+    lines: 10;
+    margin: 6 0;
+    padding: 2 0;
+    scrollbar: false;
+    fixed-height: false;
 }
 
 element {
+    border-radius: 8;
+    padding: 8 10;
+    margin: 2 0;
     background-color: transparent;
-    padding: 10;
-    border-radius: 10;
+    text-color: @subtext1;
 }
 
 element-text {
-    background-color: inherit;
+    background-color: transparent;
     text-color: inherit;
     expand: true;
     horizontal-align: 0;
@@ -82,59 +81,49 @@ element-text {
 }
 
 element-icon {
-    background-color: inherit;
+    background-color: transparent;
     text-color: @text;
-    padding: 0 10 0 0;
+    padding: 0 12 0 0;
 }
 
 element.normal.normal {
-    background-color: @mantle;
+    background-color: transparent;
     text-color: @text;
 }
-element.normal.urgent {
-    background-color: @mantle;
-    text-color: @red;
-}
 element.normal.active {
-    background-color: @mantle;
+    background-color: transparent;
     text-color: @blue;
 }
+element.normal.urgent {
+    background-color: transparent;
+    text-color: @red;
+}
+
 element.selected.normal {
     background-color: @surface1;
     text-color: @text;
-}
-element.selected.urgent {
-    background-color: @surface1;
-    text-color: @red;
+    border-radius: 8;
 }
 element.selected.active {
     background-color: @surface1;
     text-color: @blue;
 }
-element.alternate.normal {
-    background-color: @base;
-    text-color: @subtext1;
-}
-element.alternate.urgent {
-    background-color: @base;
+element.selected.urgent {
+    background-color: @surface1;
     text-color: @red;
-}
-element.alternate.active {
-    background-color: @base;
-    text-color: @blue;
 }
 
 message {
     background-color: @surface0;
     text-color: @text;
-    padding: 8 10;
     border-radius: 8;
+    padding: 6 10;
     margin: 4 0;
 }
 
 error-message {
     background-color: @red;
     text-color: @mantle;
-    padding: 10;
-    border-radius: 10;
+    border-radius: 8;
+    padding: 8 10;
 }
