@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Rofi configuration (customize this)
-rofi_cmd="rofi -dmenu -i -p '󰖩' -theme ~/.config/rofi/network.rasi"
+rofi_cmd="rofi -dmenu -i -p '󰖩' -theme ~/.config/rofi/launcher.rasi"
 
 # Optional: Notification timeout in milliseconds
 notify_timeout=3000
