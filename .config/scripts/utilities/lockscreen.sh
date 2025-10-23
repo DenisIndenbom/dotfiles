@@ -26,7 +26,6 @@ i3lock \
     --pass-screen-keys \
     --pass-volume-keys \
     \
-    # Indicator
     --indicator \
     --radius 70 \
     --ring-width 6 \
@@ -39,7 +38,6 @@ i3lock \
     --insidewrong-color="$mantle" \
     --line-uses-inside \
     \
-    # Clock
     --time-str="%I:%M %p" \
     --time-font="$font_main" \
     --time-size=70 \
@@ -52,7 +50,6 @@ i3lock \
     --date-color="$accent" \
     --date-pos="w/2:h/2-110" \
     \
-    # Status messages
     --verif-text="Verifying..." \
     --verif-color="$green" \
     --verif-font="$font_main" \
@@ -69,18 +66,15 @@ i3lock \
     --lock-text="Locking..." \
     --lockfailed-text="Lock failed!" \
     \
-    # Greeter (icon)
     --greeter-text="󰌾" \
     --greeter-font="$font_icon" \
     --greeter-size=60 \
     --greeter-color="$accent" \
     --greeter-pos="w/2:h/2+260" \
     \
-    # Key highlights
     --keyhl-color="$accent" \
     --bshl-color="$accent" \
     --separator-color="$mantle" \
     --pointer=default \
     \
-    # Misc
     --show-failed-attempts
