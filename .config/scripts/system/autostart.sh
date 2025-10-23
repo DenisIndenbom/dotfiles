@@ -41,7 +41,3 @@ sh "$HOME/.config/scripts/system/notifications.sh" &
 
 # Compositor
 sh "$HOME/.config/scripts/system/compositor.sh" &
-
-# Start programs
-exec mpd &
-exec mpDris2 &

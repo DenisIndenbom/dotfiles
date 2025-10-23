@@ -19,12 +19,6 @@ notify_user() {
 		-i "$icon_path/$colorscheme/clipboard.svg" \
 		-u low \
 		-r 699 "Clipboard" "Screenshot saved on clipboard"
-
-	if [ -e "$dir/$file" ]; then
-		notify-send -a Screenshot -u low -i "$dir/$file" "Screenshot Saved"
-	else
-		notify-send -a Screenshot -u low "Screenshot Deleted"
-	fi
 }
 
 countdown() {

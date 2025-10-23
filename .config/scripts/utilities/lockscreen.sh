@@ -1,68 +1,86 @@
 #!/bin/sh
 
-# Colors
-base=#1e1e2e
-mantle=#181825
-green=#a6e3a1
-red=#f38ba8
-text=#cdd6f4
+# --- Colors ---
+base="#1e1e2e"
+mantle="#181825"
+text="#cdd6f4"
+green="#a6e3a1"
+red="#f38ba8"
+accent="#89b4fa"
 
-font="JetBrains Mono"
+# --- Fonts ---
+font_main="JetBrains Mono"
+font_icon="Symbols Nerd Font"
+
+# --- Background ---
 background="$HOME/.lock"
 
+# --- Launch i3lock-color ---
 i3lock \
     --fill \
     -i "$background" \
-	-n -e \
+    -n -e \
     -c 00000000 \
     --pass-media-keys \
     --pass-power-keys \
     --pass-screen-keys \
     --pass-volume-keys \
+    \
+    # Indicator
     --indicator \
+    --radius 70 \
+    --ring-width 6 \
+    --ind-pos="w/2:h/2+200" \
+    --ring-color="$mantle" \
+    --ringver-color="$green" \
+    --ringwrong-color="$red" \
+    --inside-color="$base" \
+    --insidever-color="$mantle" \
+    --insidewrong-color="$mantle" \
     --line-uses-inside \
-    --force-clock i3lock \
-    --show-failed-attempts  \
-    --radius 69 \
-    --modif-size 9 \
-    --modif-pos "w/2:h/2-20" \
-    --time-str "%I:%M %p" \
-    --time-pos "w/2+0:h/2-200" \
-    --date-pos "w/2+0:h/2-150" \
-    --time-color "$base" \
-    --date-color "$base" \
-    --time-size 69 \
-    --date-size 25 \
-    --time-font "$font" \
-    --date-font "$font" \
-    --verif-text "Verifying" \
-    --verif-color "$green" \
-    --verif-size 15 \
-    --verif-pos "w/2-0:h/2+100" \
-    --verif-font "$font" \
-    --wrong-text "Incorrect, Try Again" \
-    --wrong-color "$red" \
-    --wrong-size 15 \
-    --wrong-pos "w/2-0:h/2+100" \
-    --wrong-font "$font" \
-    --greeter-text "" \
-    --greeter-color "$green" \
-    --greeter-size 60 \
-    --greeter-font "Phosphor" \
-    --greeter-pos "w/2-0:h/2+230" \
-    --ring-color "$base" \
-    --ringver-color "$green" \
-    --ringwrong-color "$red" \
-    --ring-width 5 \
-    --insidever-color "$mantle" \
-    --insidewrong-color "$mantle" \
-    --inside-color "$mantle" \
-    --ind-pos "w/2-0:h/2+200" \
-	--lock-text "Locking" \
-	--lockfailed-text "Lock Failed!" \
-    --status-pos "w/2-0:h/2+100" \
-    --noinput-text "No Input" \
-    --keyhl-color "$text" \
-    --bshl-color "$text" \
-    --separator-color "$text" \
-    --pointer default
+    \
+    # Clock
+    --time-str="%I:%M %p" \
+    --time-font="$font_main" \
+    --time-size=70 \
+    --time-color="$text" \
+    --time-pos="w/2:h/2-160" \
+    \
+    --date-str="%A, %B %d" \
+    --date-font="$font_main" \
+    --date-size=28 \
+    --date-color="$accent" \
+    --date-pos="w/2:h/2-110" \
+    \
+    # Status messages
+    --verif-text="Verifying..." \
+    --verif-color="$green" \
+    --verif-font="$font_main" \
+    --verif-size=18 \
+    --verif-pos="w/2:h/2+130" \
+    \
+    --wrong-text="Incorrect password" \
+    --wrong-color="$red" \
+    --wrong-font="$font_main" \
+    --wrong-size=18 \
+    --wrong-pos="w/2:h/2+130" \
+    \
+    --noinput-text="Waiting for input..." \
+    --lock-text="Locking..." \
+    --lockfailed-text="Lock failed!" \
+    \
+    # Greeter (icon)
+    --greeter-text="󰌾" \
+    --greeter-font="$font_icon" \
+    --greeter-size=60 \
+    --greeter-color="$accent" \
+    --greeter-pos="w/2:h/2+260" \
+    \
+    # Key highlights
+    --keyhl-color="$accent" \
+    --bshl-color="$accent" \
+    --separator-color="$mantle" \
+    --pointer=default \
+    \
+    # Misc
+    --show-failed-attempts
