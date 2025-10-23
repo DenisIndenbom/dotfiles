@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 packages="\
 python-setuptools polybar rofi alacritty picom-ftlabs-git dunst \
@@ -15,3 +15,8 @@ python3 python-gobject yad"
 
 yay -S $packages --needed
 
+cp -r ./.config ~/
+find ~/.config/scripts -type f -exec chmod +x {} +
+cp ~/.i3/conifg config_backup
+cp ./.i3/config ~/.i3/config
+cp ./.config/wallpapers/mocha.png ~/.wall
