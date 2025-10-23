@@ -13,7 +13,5 @@ libnotify notify-send-py \
 xdo xsettingsd \
 python3 python-gobject yad"
 
-sudo pacman -S base-devel
-
 yay -S $packages --needed
 
