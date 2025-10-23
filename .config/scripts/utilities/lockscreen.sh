@@ -10,7 +10,7 @@ accent="#89b4fa"
 
 # --- Fonts ---
 font_main="JetBrains Mono"
-font_icon="Symbols Nerd Font"
+font_icon="JetBrains Mono Nerd"
 
 # --- Background ---
 background="$HOME/.lock"
