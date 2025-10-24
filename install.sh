@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 packages="\
-python-setuptools polybar rofi alacritty picom dunst \
+python-setuptools polybar rofi alacritty picom-ftlabs-git dunst \
 gtk3 gtk4 gtk-engine-murrine gnome-themes-extra \
 pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber alsa-utils pamixer \
 feh brightnessctl bluez-utils i3lock-color \
@@ -13,6 +13,7 @@ libnotify notify-send-py \
 xdo xsettingsd \
 python3 python-gobject yad"
 
+yay -S base-devel --needed
 yay -S $packages --needed
 
 # cp -r ./.config ~/
