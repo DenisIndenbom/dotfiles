@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 packages="\
-python-setuptools polybar rofi alacritty picom-ftlabs-git dunst \
+python-setuptools polybar rofi alacritty picom dunst \
 gtk3 gtk4 gtk-engine-murrine gnome-themes-extra \
 pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber alsa-utils pamixer \
 feh brightnessctl bluez-utils i3lock-color \
@@ -15,8 +15,8 @@ python3 python-gobject yad"
 
 yay -S $packages --needed
 
-cp -r ./.config ~/
-find ~/.config/scripts -type f -exec chmod +x {} +
-cp ~/.i3/config config_backup
-cp ./.i3/config ~/.i3/config
-cp ./.config/wallpapers/mocha.png ~/.wall
+# cp -r ./.config ~/
+# find ~/.config/scripts/ -type f -exec chmod +x {} +
+# cp ~/.i3/config config_backup
+# cp ./.i3/config ~/.i3/config
+# cp ./.config/wallpapers/mocha.png ~/.wall
