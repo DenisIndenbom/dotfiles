@@ -9,12 +9,11 @@ red="#f38ba8"
 accent="#89b4fa"
 
 # --- Fonts ---
-font_main="JetBrains Mono"
-font_icon="JetBrains Mono Nerd"
+font="JetBrains Mono"
 
 # --- Background ---
 background="$HOME/.lock"
-
+    
 # --- Launch i3lock-color ---
 i3lock \
     --fill \
@@ -27,9 +26,9 @@ i3lock \
     --pass-volume-keys \
     \
     --indicator \
-    --radius 70 \
+    --ind-pos="w/2:h/2" \
+    --radius 100 \
     --ring-width 6 \
-    --ind-pos="w/2:h/2+200" \
     --ring-color="$mantle" \
     --ringver-color="$green" \
     --ringwrong-color="$red" \
@@ -38,43 +37,33 @@ i3lock \
     --insidewrong-color="$mantle" \
     --line-uses-inside \
     \
-    --time-str="%I:%M %p" \
-    --time-font="$font_main" \
-    --time-size=70 \
+    --clock \
+    --time-str="%H:%M" \
+    --time-font="$font" \
+    --time-size=22 \
     --time-color="$text" \
-    --time-pos="w/2:h/2-160" \
     \
-    --date-str="%A, %B %d" \
-    --date-font="$font_main" \
-    --date-size=28 \
+    --date-str="%Y-%m-%d" \
+    --date-font="$font" \
+    --date-size=20 \
     --date-color="$accent" \
-    --date-pos="w/2:h/2-110" \
     \
     --verif-text="Verifying..." \
     --verif-color="$green" \
-    --verif-font="$font_main" \
-    --verif-size=18 \
-    --verif-pos="w/2:h/2+130" \
+    --verif-font="$font" \
+    --verif-size=16 \
+    --verif-pos="w/2:h/2+10" \
     \
     --wrong-text="Incorrect password" \
     --wrong-color="$red" \
-    --wrong-font="$font_main" \
-    --wrong-size=18 \
-    --wrong-pos="w/2:h/2+130" \
-    \
-    --noinput-text="Waiting for input..." \
-    --lock-text="Locking..." \
-    --lockfailed-text="Lock failed!" \
-    \
-    --greeter-text="󰌾" \
-    --greeter-font="$font_icon" \
-    --greeter-size=60 \
-    --greeter-color="$accent" \
-    --greeter-pos="w/2:h/2+260" \
+    --wrong-font="$font" \
+    --wrong-size=16 \
+    --wrong-pos="w/2:h/2+10" \
     \
     --keyhl-color="$accent" \
     --bshl-color="$accent" \
     --separator-color="$mantle" \
     --pointer=default \
     \
-    --show-failed-attempts
+    --show-failed-attempts \
+    --status-pos="w/2:h/2+10"
