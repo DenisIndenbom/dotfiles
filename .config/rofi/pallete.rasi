@@ -56,7 +56,7 @@ textbox-prompt-colon {
   enabled:                        true;
   expand:                         false;
   width:                          50px;
-  padding:                        12px;
+  padding:                        0 8 0 0;
   border-radius:                  100%;
   text-color:                     @mantle;
   background-color:               @lavender;

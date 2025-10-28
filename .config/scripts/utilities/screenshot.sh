@@ -55,18 +55,7 @@ area() {
 }
 
 timer() {
-	action=$(
-		yad \
-			--scale \
-			--min-value 1 \
-			--max-value 100 \
-			--title "Set a number of seconds" \
-			--on-top --center --no_escape \
-			--width 350 \
-			--height 100
-	)
-
-	countdown "$action"
+	countdown 3
 	sleep 1
 	screen
 }
