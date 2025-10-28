@@ -79,8 +79,6 @@ menu() {
 	window=""
 	timer="󰄉"
 
-	sh "$script_dir/menu/accent.sh"
-
 	chosen="$(printf "%s\n%s\n%s\n%s\n" "$screen" "$area" "$window" "$timer" | rofi -theme "$config" -p 'Take Screenshot' -dmenu -selected-row 0 -theme-str 'listview {lines: 4;}')"
 
 	case $chosen in

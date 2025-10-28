@@ -48,14 +48,14 @@ textbox-prompt-colon {
   padding:                        15px;
   border-radius:                  100%;
   background-color:               @mantle;
-  text-color:                     @accent;
+  text-color:                     @lavender;
 }
 
 prompt {
   enabled:                        true;
   padding:                        15px;
   border-radius:                  100px;
-  background-color:               @accent;
+  background-color:               @lavender;
   text-color:                     @mantle;
 }
 
@@ -95,7 +95,7 @@ element-text {
 }
 
 element selected.normal {
-  background-color:               @accent;
+  background-color:               @lavender;
   text-color:                     @mantle;
 }
 
@@ -104,7 +104,7 @@ message {
   padding:                        15px;
   border:                         0px;
   border-radius:                  100%;
-  border-color:                   @accent;
+  border-color:                   @lavender;
   background-color:               @mantle;
   text-color:                     @text;
 }

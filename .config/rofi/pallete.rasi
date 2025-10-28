@@ -59,18 +59,18 @@ textbox-prompt-colon {
   padding:                        12px;
   border-radius:                  100%;
   text-color:                     @mantle;
-  background-color:               @accent;
+  background-color:               @lavender;
   horizontal-align:               0.5;
   vertical-align:                 0.5;
-  str:                            "";
-  font:                           "JetBrainsMono-Bold 12";
+  str:                            "";
+  font:                           "JetBrainsMono-Bold 18";
 }
 
 prompt {
   enabled:                        true;
   padding:                        15px;
   border-radius:                  100px;
-  background-color:               @accent;
+  background-color:               @lavender;
   text-color:                     @mantle;
 }
 
@@ -111,12 +111,12 @@ element normal.normal {
 }
 
 element normal.active {
-  background-color:               @accent;
+  background-color:               @lavender;
   text-color:                     @mantle;
 }
 
 element selected.normal {
-  background-color:               @accent;
+  background-color:               @lavender;
   text-color:                     @mantle;
 }
 

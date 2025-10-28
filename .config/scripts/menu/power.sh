@@ -9,9 +9,6 @@ lock="󰌾"
 suspend="󰖔"
 logout="󰗽"
 
-# Source accent color script if it exists
-[ -f "$script_dir/accent.sh" ] && sh "$script_dir/accent.sh"
-
 chosen="$(printf "%s\n%s\n%s\n%s\n%s\n" "$shutdown" "$reboot" "$lock" "$suspend" "$logout" | rofi -theme "$config" -p "$(uptime -p)" -dmenu -selected-row 2)"
 
 execute () {
