@@ -48,14 +48,13 @@ bindsym $mod+d         exec --no-startup-id ~/.config/scripts/menu/launcher.sh d
 bindsym $mod+p         exec --no-startup-id ~/.config/scripts/menu/power.sh
 bindsym $mod+Shift+n   exec --no-startup-id ~/.config/scripts/menu/network.sh
 bindsym $mod+Shift+p   exec --no-startup-id ~/.config/scripts/menu/pallete.sh
-bindsym $mod+Shift+s   exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --menu
+bindsym $mod+Print     exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --menu
 
 # --- UTILITIES ---
 bindsym $mod+L         exec --no-startup-id ~/.config/scripts/utilities/lockscreen.sh
 
 # --- SCREENSHOTS ---
-bindsym Print          exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --shot
-bindsym $mod+Alt+a     exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --area
+bindsym $mod+Shift+s   exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --area
 
 # --- BRIGHTNESS & VOLUME ---
 bindsym XF86MonBrightnessUp   exec --no-startup-id ~/.config/scripts/utilities/brightness.sh --up
