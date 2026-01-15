@@ -25,7 +25,7 @@ case "$chosen" in
     execute "shutdown -h now" "shutdown"
   ;;
   "$reboot")
-    execute "reboot -h now" "reboot"
+    execute "reboot" "reboot"
   ;;
   "$lock")
     sh "$HOME/.config/scripts/utilities/lockscreen.sh"
