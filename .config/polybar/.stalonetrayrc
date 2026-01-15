@@ -1,0 +1,23 @@
+# ===== WINDOW & LAYOUT =====
+geometry 1x100-0+0    # Start as 1 column, up to 100 icons tall, at top-right
+vertical true         # Vertical layout
+scrollbars none       # No scrollbars
+icon_size 16          # Base icon size
+slot_size 22          # Grid slot size
+grow_gravity NE       # New icons will appear from the TOP-right corner
+window_layer top      # Ensure it's always visible
+window_strut auto     # Reserve screen space
+skip_taskbar true     # Don't show in taskbar
+dockapp_mode none     # Don't act as a dock app
+
+# Base: #1e1e2e, Mantle: #181825, Surface0: #313244
+background "#1e1e2e"  # Base color
+transparent false
+tint_color "#181825"  # Mantle color for tint
+tint_level 40
+decorations none      # No window borders or title
+
+# ===== INTERACTION & BEHAVIOR =====
+kludges force_icons_size  # Force all icons to use our size
+window_type utility       # Hint to window manager
+max_geometry 5x100        # Expands to max 5 columns wide when clicked
