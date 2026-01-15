@@ -7,7 +7,7 @@ colorscheme=mocha
 clock=$(date +%Y-%m-%d-%I-%M-%S)
 geometry=$(xrandr | head -n1 | cut -d',' -f2 | tr -d '[:blank:],current')
 
-dir="$(xdg-user-dir PICTURES)/screenshots"
+dir="$HOME/screenshots"
 file="screenshot_${clock}_${geometry}.png"
 
 [ ! -d "$dir" ] && mkdir -p "$dir"
