@@ -1,0 +1,33 @@
+import = [
+    ".config/alacritty/fonts.toml",
+    ".config/palletes/alacritty/mocha.toml",
+]
+live_config_reload = true
+
+[env]
+TERM = "alacritty"
+WINIT_X11_SCALE_FACTOR = "1.0"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[colors]
+draw_bold_text_with_bright_colors = false
+
+[cursor]
+style = { shape = "Block", blinking = "On" }
+
+[window]
+decorations = "full"
+dynamic_title = true
+opacity = 1.0
+startup_mode = "Windowed"
+
+[window.dimensions]
+columns = 84
+lines = 24
+
+[window.padding]
+x = 25
+y = 25
