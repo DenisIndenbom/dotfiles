@@ -1,6 +1,6 @@
 #!/bin/sh
 
-config=".config/alacritty/alacritty.yml"
+config=".config/alacritty/alacritty.toml"
 
 case $1 in
   --float)
