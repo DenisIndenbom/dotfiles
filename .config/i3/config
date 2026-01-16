@@ -29,10 +29,6 @@ client.placeholder      #24273a #24273a #24273a #24273a
 # --- WINDOW RULES ---
 for_window [class="TelegramDesktop"] floating enable
 
-for_window [class="firefox"] floating enable
-for_window [class="firefox"] resize set 1600 900
-for_window [class="firefox"] move absolute position center
-
 for_window [class="Viewnior"] floating enable
 for_window [class="Viewnior"] move absolute position center
 
