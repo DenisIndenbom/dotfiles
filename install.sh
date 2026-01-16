@@ -256,6 +256,7 @@ if [[ $# -gt 0 ]]; then
             install_sddm_theme
             ;;
         --configs)
+            backup_configs
             copy_configs
             ;;
         --backup)
