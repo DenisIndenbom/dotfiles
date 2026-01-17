@@ -37,7 +37,7 @@ install_yay() {
     if ! command_exists yay; then
         log_info "yay not found. Installing yay..."
         sudo pacman -S --needed --noconfirm git base-devel
-        git clone https://aur.archlinux.org/yay.git /tmp/yay
+        git clone https://aur.archlinux.org/yay-bin.git /tmp/yay
         cd /tmp/yay && makepkg -si --noconfirm
         cd - > /dev/null
         rm -rf /tmp/yay
