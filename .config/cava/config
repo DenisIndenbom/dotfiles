@@ -1,0 +1,118 @@
+# cava configuration file
+# Place in ~/.config/cava/config
+
+[general]
+# Smoothing mode. Can be 'normal', 'scientific' or 'waves'. 
+# Depends if you want to have more fading or a more static output.
+smoothing = waves
+
+# Set to 1 if you want to invert the values.
+invert = 0
+
+# Set to 1 if you want to align to the center.
+align_to_center = 1
+
+# Fudge factor to make the bars look nicer. Higher = smaller bars.
+bar_fixed = 1
+
+# Bar spacing. Value from 0 to 5
+bar_spacing = 1
+
+# Bar width. Value from 0 to 5
+bar_width = 2
+
+# Bar height in percentage of terminal height. Value from 0 to 100
+bar_height = 100
+
+# Upper and lower cutoff for bar values. 
+# Values outside this range are ignored.
+# Accepts absolute value (like 15000) or percentage (like 90%)
+# Set lower_cutoff to 1% to eliminate near-silent sounds
+lower_cutoff = 1
+upper_cutoff = 100
+
+# Method used for smoothing. Can be 'monstercat' or 'sgs' (Savitzky Golay filter).
+smoothing_method = monstercat
+
+# Audio channels to use. Can be 'stereo' or 'left', 'right'.
+channels = stereo
+
+[input]
+# Audio capturing method. Possible values are: 'alsa', 'pulse', 'fifo', 'sndio' or 'shmem'
+method = pipewire
+
+# source = auto # for alsa, pulse, sndio or shmem
+# source = /tmp/mpd.fifo # for fifo
+
+[output]
+# Output method. Can be 'ncurses', 'noncurses' or 'raw'.
+method = ncurses
+
+# Visual mode. Can be 'normal' or 'bottom' (only for ncurses output).
+# In 'bottom' mode, the bars rise from the bottom of the terminal.
+visual_mode = normal
+
+# Stereo mode. Can be 'lr', 'wave' or 'wave_inverted' (only for ncurses output).
+# 'lr' shows left and right bars beside each other.
+# 'wave' shows a single wave for both channels.
+stereo_mode = lr
+
+# Target frame rate. If your terminal is slow, you might want to set this lower.
+framerate = 60
+
+# Autosensitivity. Set to 1 to automatically adjust sensitivity.
+autosens = 1
+
+# Manual sensitivity. Only used if autosens is 0.
+# A higher value means less sensitivity (bars are lower).
+# sensitivity = 100
+
+# Number of bars. Must be 1 or more.
+bars = 16
+
+# Lower and higher frequency cutoffs for the bars.
+# low_cutoff = 50
+# high_cutoff = 10000
+
+[color]
+# Background color (terminal transparent if empty)
+background = '#1e1e2e'
+
+# Color mode. Can be 'gradient', 'single', or 'random'.
+mode = gradient
+
+# Gradient mode. 1 = split gradient according to gradient_color_1,2,etc.
+# 0 = gradient between gradient_color_1 and gradient_color_2
+gradient = 1
+
+# Gradient count - number of colors in gradient (1-8)
+# Only used when gradient = 1
+gradient_count = 8
+
+# When gradient = 1, colors are split equally among bars
+# When gradient = 0, colors transition smoothly between gradient_color_1 and gradient_color_2
+
+# Colors for gradient mode (gradient = 1)
+gradient_color_1 = '#94e2d5'
+gradient_color_2 = '#89dceb'
+gradient_color_3 = '#74c7ec'
+gradient_color_4 = '#89b4fa'
+gradient_color_5 = '#cba6f7'
+gradient_color_6 = '#f5c2e7'
+gradient_color_7 = '#eba0ac'
+gradient_color_8 = '#f38ba8'
+
+# Colors for gradient mode (gradient = 0)
+# gradient_color_1 = '#94e2d5'
+# gradient_color_2 = '#f38ba8'
+
+# Color for single color mode (only foreground_color_1 is used)
+# foreground_color_1 = '#94e2d5'
+
+[eq]
+# This is an array of numbers (floating point or integer) that adjust the 
+# spectrum of the visualizer. Each number corresponds to a frequency band.
+# The default is all 1.0 which means no adjustment.
+# You can adjust specific frequencies like this:
+# 1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1 (16 numbers for 16 bars)
+1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1
