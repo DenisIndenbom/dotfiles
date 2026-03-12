@@ -59,7 +59,7 @@ confirm_action() {
     [[ "$response" =~ ^[Yy]$ ]]
 }
 
-# Array of packages (better than string for expansion)
+# Array of packages
 packages=(
     # Core desktop components
     python-setuptools polybar rofi alacritty picom-ftlabs-git dunst
@@ -72,7 +72,7 @@ packages=(
     # Desktop tools
     yad xclip stalonetray maim gpick imagemagick ffmpeg
     # Fonts
-    ttf-jetbrains-mono-nerd ttf-jetbrains-mono ttf-sarasa-gothic ttf-roboto
+    ttf-jetbrains-mono-nerd ttf-jetbrains-mono ttf-sarasa-gothic ttf-roboto consolas-font
     # Music
     mpd mpdris2 ncmpcpp playerctl
     # Power management

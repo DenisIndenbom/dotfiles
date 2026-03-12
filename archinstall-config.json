@@ -1,0 +1,233 @@
+{
+    "app_config": {
+        "audio_config": {
+            "audio": "pipewire"
+        },
+        "bluetooth_config": {
+            "enabled": true
+        },
+        "print_service_config": {
+            "enabled": true
+        }
+    },
+    "archinstall-language": "English",
+    "auth_config": {},
+    "bootloader_config": {
+        "bootloader": "Grub",
+        "removable": true,
+        "uki": false
+    },
+    "custom_commands": [],
+    "disk_config": {
+        "btrfs_options": {
+            "snapshot_config": {
+                "type": "Snapper"
+            }
+        },
+        "config_type": "default_layout",
+        "device_modifications": [
+            {
+                "device": "/dev/sda",
+                "partitions": [
+                    {
+                        "btrfs": [],
+                        "dev_path": null,
+                        "flags": [
+                            "boot",
+                            "esp"
+                        ],
+                        "fs_type": "fat32",
+                        "mount_options": [],
+                        "mountpoint": "/boot",
+                        "obj_id": "7575afc8-5088-4dca-b837-a7c261017915",
+                        "size": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "GiB",
+                            "value": 1
+                        },
+                        "start": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "MiB",
+                            "value": 1
+                        },
+                        "status": "create",
+                        "type": "primary"
+                    },
+                    {
+                        "btrfs": [
+                            {
+                                "mountpoint": "/",
+                                "name": "@"
+                            },
+                            {
+                                "mountpoint": "/home",
+                                "name": "@home"
+                            },
+                            {
+                                "mountpoint": "/var/log",
+                                "name": "@log"
+                            },
+                            {
+                                "mountpoint": "/var/cache/pacman/pkg",
+                                "name": "@pkg"
+                            }
+                        ],
+                        "dev_path": null,
+                        "flags": [],
+                        "fs_type": "btrfs",
+                        "mount_options": [
+                            "compress=zstd"
+                        ],
+                        "mountpoint": null,
+                        "obj_id": "2a9152d4-146d-4338-ad03-b20a4f56affd",
+                        "size": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "B",
+                            "value": 16104030208
+                        },
+                        "start": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "B",
+                            "value": 1074790400
+                        },
+                        "status": "create",
+                        "type": "primary"
+                    }
+                ],
+                "wipe": true
+            }
+        ],
+        "lvm_config": {
+            "config_type": "default",
+            "vol_groups": [
+                {
+                    "lvm_pvs": [
+                        "2a9152d4-146d-4338-ad03-b20a4f56affd"
+                    ],
+                    "name": "ArchinstallVg",
+                    "volumes": [
+                        {
+                            "btrfs": [
+                                {
+                                    "mountpoint": "/",
+                                    "name": "@"
+                                },
+                                {
+                                    "mountpoint": "/home",
+                                    "name": "@home"
+                                },
+                                {
+                                    "mountpoint": "/var/log",
+                                    "name": "@log"
+                                },
+                                {
+                                    "mountpoint": "/var/cache/pacman/pkg",
+                                    "name": "@pkg"
+                                }
+                            ],
+                            "fs_type": "btrfs",
+                            "length": {
+                                "sector_size": {
+                                    "unit": "B",
+                                    "value": 512
+                                },
+                                "unit": "GiB",
+                                "value": 32
+                            },
+                            "mount_options": [
+                                "compress=zstd"
+                            ],
+                            "mountpoint": "/",
+                            "name": "root",
+                            "obj_id": "dcf3dddc-f472-4e1a-a616-4f9ba3f1aaae",
+                            "status": "create"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "hostname": "archlinux",
+    "kernels": [
+        "linux"
+    ],
+    "locale_config": {
+        "kb_layout": "us",
+        "sys_enc": "UTF-8",
+        "sys_lang": "en_US.UTF-8"
+    },
+    "mirror_config": {
+        "custom_repositories": [],
+        "custom_servers": [],
+        "mirror_regions": {
+            "Russia": [
+                "http://mirror.yandex.ru/archlinux/$repo/os/$arch",
+                "https://mirror.yandex.ru/archlinux/$repo/os/$arch",
+                "http://ru.mirrors.cicku.me/archlinux/$repo/os/$arch",
+                "https://ru.mirrors.cicku.me/archlinux/$repo/os/$arch",
+                "http://mirror.truenetwork.ru/archlinux/$repo/os/$arch",
+                "https://mirror.truenetwork.ru/archlinux/$repo/os/$arch",
+                "http://mirrors.powernet.com.ru/archlinux/$repo/os/$arch",
+                "http://repository.su/archlinux/$repo/os/$arch",
+                "https://repository.su/archlinux/$repo/os/$arch",
+                "http://mirror.nw-sys.ru/archlinux/$repo/os/$arch",
+                "https://mirror.nw-sys.ru/archlinux/$repo/os/$arch",
+                "http://mirror.kamtv.ru/archlinux/$repo/os/$arch",
+                "https://mirror.kamtv.ru/archlinux/$repo/os/$arch",
+                "http://mirror.kpfu.ru/archlinux/$repo/os/$arch",
+                "https://mirror.kpfu.ru/archlinux/$repo/os/$arch",
+                "http://archlinux.gay/archlinux/$repo/os/$arch",
+                "https://archlinux.gay/archlinux/$repo/os/$arch",
+                "http://web.sketserv.ru/archlinux/$repo/os/$arch",
+                "https://web.sketserv.ru/archlinux/$repo/os/$arch"
+            ]
+        },
+        "optional_repositories": []
+    },
+    "network_config": {
+        "type": "nm"
+    },
+    "ntp": true,
+    "packages": [
+        "base-devel",
+        "btrfs-assistant",
+        "git",
+        "snap-pac",
+        "snapper",
+        "grub-btrfs"
+    ],
+    "parallel_downloads": 0,
+    "profile_config": {
+        "gfx_driver": "All open-source",
+        "greeter": "sddm",
+        "profile": {
+            "custom_settings": {
+                "i3-wm": {}
+            },
+            "details": [
+                "i3-wm"
+            ],
+            "main": "Desktop"
+        }
+    },
+    "script": null,
+    "services": [],
+    "swap": {
+        "algorithm": "zstd",
+        "enabled": true
+    },
+    "timezone": "Europe/Moscow",
+    "version": "3.0.15"
+}
