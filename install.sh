@@ -68,7 +68,7 @@ packages=(
     # Audio
     pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber alsa-utils pamixer
     # Utilities
-    feh brightnessctl bluez-utils i3lock-color
+    feh brightnessctl bluez-utils i3lock-color ranger
     # Desktop tools
     yad xclip stalonetray maim gpick imagemagick ffmpeg
     # Fonts
