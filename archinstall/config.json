@@ -76,6 +76,14 @@
                             {
                                 "mountpoint": "/var/cache/pacman/pkg",
                                 "name": "@pkg"
+                            },
+                            {
+                                "mountpoint": "/.snapshots",
+                                "name": "@snapshots"
+                            },
+                            {
+                                "mountpoint": "/swap",
+                                "name": "@swap"
                             }
                         ],
                         "dev_path": null,
@@ -91,8 +99,8 @@
                                 "unit": "B",
                                 "value": 512
                             },
-                            "unit": "B",
-                            "value": 16104030208
+                            "unit": "percent",
+                            "value": "100%"
                         },
                         "start": {
                             "sector_size": {
@@ -109,55 +117,7 @@
                 "wipe": true
             }
         ],
-        "lvm_config": {
-            "config_type": "default",
-            "vol_groups": [
-                {
-                    "lvm_pvs": [
-                        "2a9152d4-146d-4338-ad03-b20a4f56affd"
-                    ],
-                    "name": "ArchinstallVg",
-                    "volumes": [
-                        {
-                            "btrfs": [
-                                {
-                                    "mountpoint": "/",
-                                    "name": "@"
-                                },
-                                {
-                                    "mountpoint": "/home",
-                                    "name": "@home"
-                                },
-                                {
-                                    "mountpoint": "/var/log",
-                                    "name": "@log"
-                                },
-                                {
-                                    "mountpoint": "/var/cache/pacman/pkg",
-                                    "name": "@pkg"
-                                }
-                            ],
-                            "fs_type": "btrfs",
-                            "length": {
-                                "sector_size": {
-                                    "unit": "B",
-                                    "value": 512
-                                },
-                                "unit": "GiB",
-                                "value": 32
-                            },
-                            "mount_options": [
-                                "compress=zstd"
-                            ],
-                            "mountpoint": "/",
-                            "name": "root",
-                            "obj_id": "dcf3dddc-f472-4e1a-a616-4f9ba3f1aaae",
-                            "status": "create"
-                        }
-                    ]
-                }
-            ]
-        }
+        "lvm_config": null
     },
     "hostname": "archlinux",
     "kernels": [

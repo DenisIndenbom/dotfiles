@@ -27,8 +27,6 @@ client.urgent           #E78284 #E78284 #E78284 #E78284
 client.placeholder      #24273a #24273a #24273a #24273a
 
 # --- WINDOW RULES ---
-for_window [class="TelegramDesktop"] floating enable
-
 for_window [class="Viewnior"] floating enable
 for_window [class="Viewnior"] move absolute position center
 
@@ -37,12 +35,14 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # --- TERMINAL ---
-bindsym $mod+Return    exec --no-startup-id ~/.config/scripts/utilities/terminal.sh
+bindsym $mod+Return         exec --no-startup-id ~/.config/scripts/utilities/terminal.sh
+bindsym $mod+Shift+Return   exec --no-startup-id ~/.config/scripts/utilities/terminal.sh --float
 
 # --- MENUS ---
 bindsym $mod+d         exec --no-startup-id ~/.config/scripts/menu/launcher.sh drun
 bindsym $mod+p         exec --no-startup-id ~/.config/scripts/menu/power.sh
 bindsym $mod+Shift+n   exec --no-startup-id ~/.config/scripts/menu/network.sh
+bindsym $mod+Shift+b   exec --no-startup-id ~/.config/scripts/menu/bluetooth.sh
 bindsym $mod+Shift+p   exec --no-startup-id ~/.config/scripts/menu/pallete.sh
 bindsym $mod+Print     exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --menu
 
@@ -51,6 +51,7 @@ bindsym $mod+L         exec --no-startup-id ~/.config/scripts/utilities/lockscre
 
 # --- SCREENSHOTS ---
 bindsym $mod+Shift+s   exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --area
+bindsym Print          exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --shot
 
 # --- BRIGHTNESS & VOLUME ---
 bindsym XF86MonBrightnessUp   exec --no-startup-id ~/.config/scripts/utilities/brightness.sh --up

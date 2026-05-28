@@ -62,17 +62,19 @@ confirm_action() {
 # Array of packages
 packages=(
     # Core desktop components
-    python-setuptools polybar rofi alacritty picom-ftlabs-git dunst
+    alacritty dunst picom-ftlabs-git pinentry-rofi polybar python-setuptools rofi
     # GUI toolkits
-    gtk3 gtk4 qt6-svg qt6-declarative qt5-quickcontrols2
+    gtk3 gtk4 qt5-quickcontrols2 qt6-declarative qt6-svg
     # Audio
-    pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber alsa-utils pamixer
+    alsa-utils pamixer pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber
+    # Network and Bluetooth
+    bluez-utils dmenu-bluetooth networkmanager network-manager-applet networkmanager-dmenu-git
     # Utilities
-    feh brightnessctl bluez-utils i3lock-color ranger
+    brightnessctl feh i3lock-color ranger
     # Desktop tools
-    yad xclip stalonetray maim gpick imagemagick ffmpeg
+    ffmpeg gpick imagemagick maim stalonetray xclip yad
     # Fonts
-    ttf-jetbrains-mono-nerd ttf-jetbrains-mono ttf-sarasa-gothic ttf-roboto consolas-font
+    consolas-font ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-roboto ttf-sarasa-gothic
     # Music
     mpd mpdris2 ncmpcpp playerctl
     # Power management
@@ -82,11 +84,11 @@ packages=(
     # X11 utilities
     xdo xsettingsd
     # Theming
-    lxappearance catppuccin-cursors-mocha catppuccin-gtk-theme-mocha
+    catppuccin-cursors-mocha catppuccin-gtk-theme-mocha lxappearance
     # Archives
     unzip
     # Python
-    python3 python-gobject
+    python-gobject python3
 )
 
 # SDDM theme configuration
