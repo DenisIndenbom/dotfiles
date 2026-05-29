@@ -17,9 +17,7 @@
         "removable": true,
         "uki": false
     },
-    "custom_commands": [
-        "curl -sSL https://raw.githubusercontent.com/DenisIndenbom/dotfiles/refs/heads/main/archinstall/post_install.sh | bash"
-    ],
+    "custom_commands": [],
     "disk_config": {
         "btrfs_options": {
             "snapshot_config": {
