@@ -31,34 +31,18 @@ else
     echo "Swap entry already in /etc/fstab."
 fi
 
-# 2. Configure Snapper for root and home
-echo "Setting up Snapper configurations..."
-if snapper -c root get-config &>/dev/null; then
-    echo "Snapper config 'root' already exists, skipping."
-else
-    snapper -c root create-config /
-    echo "Snapper config 'root' created."
-fi
-
-if snapper -c home get-config &>/dev/null; then
-    echo "Snapper config 'home' already exists, skipping."
-else
-    snapper -c home create-config /home
-    echo "Snapper config 'home' created."
-fi
-
-# 3. Enable automatic maintenance services
+# 2. Enable automatic maintenance services
 echo "Enabling Snapper timeline and cleanup timers..."
 systemctl enable --now snapper-timeline.timer snapper-cleanup.timer
 
 echo "Enabling monthly Btrfs scrub timer..."
 systemctl enable --now btrfs-scrub@-.timer
 
-# 4. Enable grub-btrfsd daemon (auto-updates GRUB with snapshots)
+# 3. Enable grub-btrfsd daemon (auto-updates GRUB with snapshots)
 echo "Enabling grub-btrfsd service..."
 systemctl enable --now grub-btrfsd
 
-# 5. Add Russian keyboard layout
+# 4. Add Russian keyboard layout
 echo "Configuring Russian keyboard layout..."
 localectl set-keymap ru
 localectl set-x11-keymap us,ru "" "" grp:alt_shift_toggle
