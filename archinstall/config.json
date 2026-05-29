@@ -78,10 +78,6 @@
                                 "name": "@pkg"
                             },
                             {
-                                "mountpoint": "/.snapshots",
-                                "name": "@snapshots"
-                            },
-                            {
                                 "mountpoint": "/swap",
                                 "name": "@swap"
                             }

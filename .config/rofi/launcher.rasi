@@ -23,14 +23,15 @@ configuration {
 window {
 	width: 25%;
 	height: 50%;
-	border-radius: 0;
-	border: 0;
+	border-radius: 8px;
+	border: 2px solid;
+	border-color: @mantle;
 	padding: 10;
-	background-color: @mantle;
+	background-color: @base;
 }
 
 mainbox {
-	background-color: @mantle;
+	background-color: @base;
 	children: [inputbar, listview];
 	padding: 0;
 }
@@ -38,7 +39,7 @@ mainbox {
 listview {
 	scrollbar: false;
 	padding: 2 0;
-	background-color: @mantle;
+	background-color: @base;
 	columns: 1;
 	lines: 7;
 	margin: 8 0 0 0;
