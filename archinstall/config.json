@@ -99,8 +99,8 @@
                                 "unit": "B",
                                 "value": 512
                             },
-                            "unit": "percent",
-                            "value": "100%"
+                            "unit": "Percent",
+                            "value": 100
                         },
                         "start": {
                             "sector_size": {
