@@ -70,7 +70,7 @@ packages=(
     # Network and Bluetooth
     bluez-utils dmenu-bluetooth networkmanager network-manager-applet networkmanager-dmenu-git
     # Utilities
-    brightnessctl feh i3lock-color ranger
+    brightnessctl feh i3lock-color ranger neofetch
     # Desktop tools
     ffmpeg gpick imagemagick maim stalonetray xclip yad
     # Fonts
