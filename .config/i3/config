@@ -8,7 +8,7 @@ exec --no-startup-id ~/.config/scripts/system/autostart.sh
 font pango:monospace 8
 
 # Gaps
-gaps inner 10
+gaps inner 4
 gaps outer 4
 smart_gaps off
 
@@ -87,8 +87,7 @@ bindsym $mod+Shift+Up    move up
 bindsym $mod+Shift+Right move right
 
 # Layout controls
-bindsym $mod+h split h
-bindsym $mod+v split v
+bindsym $mod+v split toggle
 bindsym $mod+f fullscreen toggle
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
