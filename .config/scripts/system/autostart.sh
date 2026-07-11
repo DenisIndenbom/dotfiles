@@ -22,11 +22,6 @@ xsetroot -cursor_name left_ptr &
 # Fix Java programs
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-# Polkit agent (Gnome)
-if [ ! "$(pidof polkit-gnome-authentication-agent-1)" ]; then
-  /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-fi
-
 # Power Management
 xfce4-power-manager &
 
