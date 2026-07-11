@@ -1,7 +1,7 @@
 @import "colors.rasi"
 
 * {
-    font: "JetBrainsMono 11";
+    font: "JetBrainsMono 15";
 
     background-color: transparent;
     separatorcolor: transparent;
@@ -46,7 +46,7 @@ prompt {
     enabled: true;
     border-radius: 0;
     padding: 5 10 0 10;
-    content: "";                /* search icon */
+    content: "";
 }
 
 entry {

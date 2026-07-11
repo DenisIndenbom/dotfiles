@@ -13,7 +13,10 @@ font="JetBrains Mono"
 
 # --- Background ---
 background="$HOME/.lock"
-    
+
+# --- Switch to US keyboard layout ---
+xkb-switch -s "us"
+
 # --- Launch i3lock-color ---
 i3lock \
     --fill \
