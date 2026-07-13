@@ -1,7 +1,7 @@
 [general]
 import = [
     "~/.config/alacritty/fonts.toml",
-    "~/.config/palletes/alacritty/mocha.toml",
+    "~/.config/alacritty/colors.toml",
 ]
 live_config_reload = true
 

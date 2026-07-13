@@ -6,7 +6,7 @@ mantle="#181825"
 text="#cdd6f4"
 green="#a6e3a1"
 red="#f38ba8"
-accent="#89b4fa"
+accent="#b4befe"
 
 # --- Fonts ---
 font="JetBrains Mono"

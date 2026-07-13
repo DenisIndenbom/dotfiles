@@ -92,8 +92,8 @@ packages=(
 )
 
 # SDDM theme configuration
-SDDM_THEME_URL="https://github.com/catppuccin/sddm/releases/download/v1.1.2/catppuccin-mocha-mauve-sddm.zip"
-SDDM_THEME_NAME="catppuccin-mocha-mauve"
+SDDM_THEME_URL="https://github.com/catppuccin/sddm/releases/download/v1.1.2/catppuccin-mocha-lavender-sddm.zip"
+SDDM_THEME_NAME="catppuccin-mocha-lavender"
 SDDM_THEME_DIR="/usr/share/sddm/themes"
 
 # Main installation function
