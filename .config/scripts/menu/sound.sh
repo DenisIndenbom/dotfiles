@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+icon="$HOME/.config/dunst/icons/device-speaker.svg"
+
 selected=$(
 	pactl list sinks | \
 	grep -ie "description:" | \
@@ -17,8 +19,8 @@ device=$(pactl list sinks | grep -C2 "Description: ${desc}$" | grep Name | cut -
 if pactl set-default-sink "$device"
 then
 	# If it worked, alert the user.
-	notify-send -t 2000 -r 2 -u low "Activated: $selected"
+	notify-send -i "$icon" -t 2000 -r 2 -u low "Activated: $selected"
 else
 	# If it didn't work, critically alert the user.
-	notify-send -t 2000 -r 2 -u critical "Error activating $selected"
+	notify-send -i "$icon" -t 2000 -r 2 -u critical "Error activating $selected"
 fi

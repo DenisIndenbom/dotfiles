@@ -2,7 +2,6 @@
 
 script_dir="$(cd "$(dirname "$0")" >/dev/null 2>&1 && pwd)"
 icon_path="$HOME/.config/dunst/icons"
-colorscheme=mocha
 
 clock=$(date +%Y-%m-%d-%I-%M-%S)
 geometry=$(xrandr | head -n1 | cut -d',' -f2 | tr -d '[:blank:],current')
@@ -16,7 +15,7 @@ notify_user() {
 	paplay /usr/share/sounds/freedesktop/stereo/screen-capture.oga 2>/dev/null &
 	notify-send \
 		-a Clipboard \
-		-i "$icon_path/$colorscheme/clipboard.svg" \
+		-i "$icon_path/clipboard.svg" \
 		-u low \
 		-r 699 "Clipboard" "Screenshot saved on clipboard"
 }
@@ -27,7 +26,7 @@ countdown() {
 			-a Clock \
 			-u normal \
 			-t 1000 \
-			-i "$icon_path/$colorscheme/timer.svg" \
+			-i "$icon_path/timer.svg" \
 			"Countdown" "Taking shot in : $sec"
 		sleep 1
 	done

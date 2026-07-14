@@ -32,9 +32,6 @@ set_values () {
 
 
 launch_bar () {
-	killall -q polybar
-  while pgrep -u "$(id -u)" -x polybar >/dev/null; do sleep 1; done
-
 	for mon in $(polybar --list-monitors | cut -d":" -f1); do
 		MONITOR=$mon polybar -q main -c "$config/config.ini" &
 	done

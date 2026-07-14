@@ -1,17 +1,16 @@
 #!/bin/sh
 
 icon_path="$HOME/.config/dunst/icons"
-colorscheme=mocha
 
 notify () {
   brightness=$(brightnessctl i | grep -oP '\(\K[^%\)]+')
 
     if [ "$brightness" -lt "35" ]; then
-        icon="$icon_path/$colorscheme/moon.svg"
+        icon="$icon_path/moon.svg"
     elif [ "$brightness" -lt "75" ]; then
-        icon="$icon_path/$colorscheme/sun-dim.svg"
+        icon="$icon_path/sun-dim.svg"
     else
-        icon="$icon_path/$colorscheme/sun.svg"
+        icon="$icon_path/sun.svg"
     fi
 
     notify-send -a Brightness -i "$icon" -t 2000 -r 969696 "Brightness : $brightness"

@@ -1,9 +1,7 @@
 #!/bin/sh
 
-# Warning: This file is important don't delete or modify anything unless know what your doing
-
 # Kill already running processs
-process="xsettingsd sxhkd polybar picom dunst mpd mpDris2 xfce4-power-manager bspc"
+process="xsettingsd sxhkd polybar picom dunst mpd mpDris2 xfce4-power-manager"
 for processed in $process; do
   if [ "$(pidof "$processed")" ]; then
 	  killall -9 "$processed"
