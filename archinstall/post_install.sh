@@ -46,6 +46,8 @@ systemctl enable --now btrfs-scrub@-.timer
 # 4. Enable grub-btrfsd daemon (auto-updates GRUB with snapshots)
 echo "Enabling grub-btrfsd service..."
 systemctl enable --now grub-btrfsd
+echo "Remake grub config..."
+grub-mkconfig -o /boot/grub/grub.cfg
 
 # 5. Add Russian keyboard layout
 echo "Configuring Russian keyboard layout..."

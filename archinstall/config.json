@@ -158,11 +158,12 @@
     "ntp": true,
     "packages": [
         "base-devel",
-        "btrfs-assistant",
         "git",
+        "btrfs-assistant",
         "snap-pac",
         "snapper",
-        "grub-btrfs"
+        "grub-btrfs",
+        "inotify-tools"
     ],
     "parallel_downloads": 0,
     "profile_config": {

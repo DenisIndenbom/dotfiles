@@ -51,5 +51,5 @@
 [urgency_critical]
   background = "#1E1E2E"
   foreground = "#CDD6F4"
-  frame_color = "#FE6400"
+  frame_color = "#FAB387"
   timeout = 20
