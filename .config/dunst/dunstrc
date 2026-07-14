@@ -3,14 +3,14 @@
   follow = mouse
   shrink = no
 
-  width = 300
+  width = 265
   height = (0, 120)
   offset = (15, 45)
   origin = top-right
-  padding = 24
-  horizontal_padding = 24
+  padding = 20
+  horizontal_padding = 20
 
-  frame_width = 3
+  frame_width = 2
   frame_color = "#b4befe"
   separator_height = 2
   separator_color = "#313244"

@@ -1,15 +1,12 @@
 #!/bin/sh
 
 # Kill already running processs
-process="xsettingsd sxhkd polybar picom dunst mpd mpDris2 xfce4-power-manager"
+process="xsettingsd polybar picom dunst mpd mpDris2 xfce4-power-manager"
 for processed in $process; do
   if [ "$(pidof "$processed")" ]; then
 	  killall -9 "$processed"
   fi
 done
-
-# Load Xresources
-xrdb "$HOME"/.Xresources
 
 # Load xsettingsd &
 xsettingsd &
