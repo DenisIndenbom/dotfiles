@@ -1,129 +1,154 @@
 configuration {
-	display-drun: "";
-	display-clipboard: "";
-	drun-display-format: "{name}";
-	modi: "drun";
+	modi:                       "drun";
+    display-drun:               "";
+	drun-display-format:        "{name}";
 }
 
 @import "colors.rasi"
 @import "fonts.rasi"
 
-* {
-	font: "JetBrainsMono 18";
-
-	background-color: @base;
-	separatorcolor: transparent;
-
-	border: 0;
-	margin: 0;
-	padding: 0;
-	spacing: 0;	
-}
-
 window {
-	width: 25%;
-	height: 50%;
-	border-radius: 8px;
-	border: 2px solid;
-	border-color: @mantle;
-	padding: 10;
-	background-color: @base;
+  transparency:                "real";
+  location:                    center;
+  anchor:                      center;
+  fullscreen:                  false;
+  width:                       700px;
+  x-offset:                    0px;
+  y-offset:                    0px;
+
+  enabled:                     true;
+  margin:                      0px;
+  padding:                     0px;
+  border:                      0px solid;
+  border-radius:               12px;
+  border-color:                @accent;
+  background-color:            @base;
+  cursor:                      "default";
 }
 
 mainbox {
-	background-color: @base;
-	children: [inputbar, listview];
-	padding: 0;
-}
-
-listview {
-	scrollbar: false;
-	padding: 2 0;
-	background-color: @base;
-	columns: 1;
-	lines: 7;
-	margin: 8 0 0 0;
+  enabled:                     true;
+  spacing:                     10px;
+  margin:                      0px;
+  padding:                     20px;
+  border:                      0px solid;
+  border-radius:               0px 0px 0px 0px;
+  border-color:                @accent;
+  background-color:            transparent;
+  children:                    [ "inputbar", "listview" ];
 }
 
 inputbar {
-	children: [prompt, entry];
-	background-color: @surface0;
-	border-radius: 10;
-	margin: 10 0 10 0;
+  enabled:                     true;
+  spacing:                     10px;
+  margin:                      0px;
+  padding:                     15px;
+  border:                      0px solid;
+  border-radius:               12px;
+  border-color:                @accent;
+  background-color:            @surface0;
+  text-color:                  @text;
+  children:                    [ "prompt", "entry" ];
 }
 
 prompt {
-	font: "Symbols Nerd Font 18";
-	background-color: @surface0;
-	text-color: @text;
-	enabled: true;
-	border-radius: 0;
-	padding: 5 10 0 10;
+  enabled:                     true;
+  background-color:            inherit;
+  text-color:                  inherit;
+  padding:                     0 5 0 0;
+}
+textbox-prompt-colon {
+  enabled:                     true;
+  expand:                      false;
+  str:                         "::";
+  background-color:            inherit;
+  text-color:                  inherit;
+}
+entry {
+  enabled:                     true;
+  background-color:            inherit;
+  text-color:                  inherit;
+  cursor:                      text;
+  placeholder:                 "Search...";
+  placeholder-color:           inherit;
 }
 
-entry {
-	background-color: transparent;
-	text-color: @text;
-	placeholder-color: @subtext0;
-	border-radius: 0;
-	placeholder: "Search...";
-	blink: false;
-	padding: 4;
+listview {
+  enabled:                     true;
+  columns:                     2;
+  lines:                       8;
+  cycle:                       true;
+  dynamic:                     true;
+  scrollbar:                   false;
+  layout:                      vertical;
+  reverse:                     false;
+  fixed-height:                true;
+  fixed-columns:               true;
+  
+  spacing:                     5px;
+  margin:                      0px;
+  padding:                     0px;
+  border:                      0px solid;
+  border-radius:               0px;
+  border-color:                @accent;
+  background-color:            transparent;
+  text-color:                  @text;
+  cursor:                      "default";
+}
+scrollbar {
+  handle-width:                5px ;
+  handle-color:                @accent;
+  border-radius:               0px;
+  background-color:            @surface0;
 }
 
 element {
-	background-color: transparent;
-	padding: 10;
-	border-radius: 10;
+  enabled:                     true;
+  spacing:                     10px;
+  margin:                      0px;
+  padding:                     5px;
+  border:                      0px solid;
+  border-radius:               12px;
+  border-color:                @accent;
+  background-color:            transparent;
+  text-color:                  @text;
+  cursor:                      pointer;
 }
-
-element-text {
-	background-color: inherit;
-	text-color: inherit;
-	expand: true;
-	horizontal-align: 0;
-	vertical-align: 0.5;
+element normal.normal {
+  background-color:            @base;
+  text-color:                  @text;
 }
-
+element selected.normal {
+  background-color:            @accent;
+  text-color:                  @base;
+}
 element-icon {
-	background-color: inherit;
-	text-color: @text;
-	padding: 0 10 0 0;
+  background-color:            transparent;
+  text-color:                  inherit;
+  size:                        32px;
+  cursor:                      inherit;
+}
+element-text {
+  background-color:            transparent;
+  text-color:                  inherit;
+  highlight:                   inherit;
+  cursor:                      inherit;
+  vertical-align:              0.5;
+  horizontal-align:            0.0;
 }
 
-element.normal.normal {
-	background-color: @mantle;
-	text-color: @text;
+error-message {
+  padding:                     15px;
+  border:                      2px solid;
+  border-radius:               12px;
+  border-color:                @accent;
+  background-color:            @base;
+  text-color:                  @text;
 }
-element.normal.urgent {
-	background-color: @mantle;
-	text-color: @red;
-}
-element.normal.active {
-	background-color: @mantle;
-	text-color: @blue;
-}
-element.selected.normal {
-	background-color: @surface1;
-	text-color: @text;
-}
-element.selected.urgent {
-	background-color: @surface1;
-	text-color: @red;
-}
-element.selected.active {
-	background-color: @surface1;
-	text-color: @blue;
-}
-element.alternate.normal {
-	background-color: @base;
-	text-color: @subtext1;
-}
-element.alternate.urgent {
-	background-color: @base;
-	text-color: @red;
-}
-element.alternate.active {
-	background-color: @base;
-	text-color: @blue;
+textbox {
+  background-color:            @base;
+  text-color:                  @text;
+  vertical-align:              0.5;
+  horizontal-align:            0.0;
+  highlight:                   none;
 }

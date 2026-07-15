@@ -46,7 +46,7 @@ element {
   background-color: transparent;
   text-color: @text;
   orientation: horizontal;
-  border-radius: 100%;
+  border-radius: 0px;
   padding: 0 6 0 0;
   cursor: pointer;
   halign: center;
