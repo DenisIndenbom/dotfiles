@@ -138,4 +138,4 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # --- SYSTEM CONTROLS ---
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "yad --title 'Exit i3 session?' --text 'Exit i3 session?' --button 'Yes':0 --button 'No':1 --buttons-layout center --center --on-top --fixed --no_escape && i3-msg exit"
+bindsym $mod+Shift+e exec "yad --title 'Exit i3 session?' --text 'Exit i3 session?' --button 'Yes':0 --button 'No':1 --buttons-layout center --center --on-top --fixed && i3-msg exit"

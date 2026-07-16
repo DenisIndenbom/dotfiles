@@ -1,21 +1,24 @@
 #!/bin/sh
 
 # Kill already running processs
-process="xsettingsd polybar picom dunst mpd mpDris2 xfce4-power-manager"
+process="xsettingsd xautolock xsetroot polybar picom dunst mpd mpDris2 xfce4-power-manager"
 for processed in $process; do
   if [ "$(pidof "$processed")" ]; then
 	  killall -9 "$processed"
   fi
 done
 
-# Load xsettingsd &
+# Fix Java programs
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# Load xsettingsd
 xsettingsd &
 
 # Fix cursor
 xsetroot -cursor_name left_ptr &
 
-# Fix Java programs
-export _JAVA_AWT_WM_NONREPARENTING=1
+# Autolock
+xautolock -detectsleep -time 5 -locker "$HOME/.config/scripts/utilities/lockscreen.sh" &
 
 # Power Management
 xfce4-power-manager &
