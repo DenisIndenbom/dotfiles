@@ -72,7 +72,7 @@ packages=(
     # Utilities
     brightnessctl feh i3lock-color ranger neofetch xdotool
     # Desktop tools
-    ffmpeg gpick imagemagick maim stalonetray xclip yad
+    ffmpeg gpick imagemagick maim xclip yad
     # Fonts
     consolas-font ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-roboto ttf-sarasa-gothic
     # Music

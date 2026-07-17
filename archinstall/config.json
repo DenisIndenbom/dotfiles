@@ -6,12 +6,14 @@
         "bluetooth_config": {
             "enabled": true
         },
+        "firewall_config": {
+            "firewall": "ufw"
+        },
         "print_service_config": {
             "enabled": true
         }
     },
-    "archinstall-language": "English",
-    "auth_config": {},
+    "archinstall_language": "English",
     "bootloader_config": {
         "bootloader": "Grub",
         "removable": true,
@@ -20,11 +22,9 @@
     "custom_commands": [],
     "disk_config": {
         "btrfs_options": {
-            "snapshot_config": {
-                "type": "Snapper"
-            }
+            "snapshot_config": null
         },
-        "config_type": "default_layout",
+        "config_type": "manual_partitioning",
         "device_modifications": [
             {
                 "device": "/dev/sda",
@@ -60,6 +60,35 @@
                         "type": "primary"
                     },
                     {
+                        "btrfs": [],
+                        "dev_path": null,
+                        "flags": [
+                            "swap"
+                        ],
+                        "fs_type": "linux-swap",
+                        "mount_options": [],
+                        "mountpoint": null,
+                        "obj_id": "9a10878c-03b4-45a0-a936-c0e338549a42",
+                        "size": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "GiB",
+                            "value": 6
+                        },
+                        "start": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "B",
+                            "value": 1074790400
+                        },
+                        "status": "create",
+                        "type": "primary"
+                    },
+                    {
                         "btrfs": [
                             {
                                 "mountpoint": "/",
@@ -76,35 +105,32 @@
                             {
                                 "mountpoint": "/var/cache/pacman/pkg",
                                 "name": "@pkg"
-                            },
-                            {
-                                "mountpoint": "/swap",
-                                "name": "@swap"
                             }
                         ],
                         "dev_path": null,
                         "flags": [],
                         "fs_type": "btrfs",
                         "mount_options": [
-                            "compress=zstd"
+                            "compress=zstd",
+                            "noatime"
                         ],
                         "mountpoint": null,
-                        "obj_id": "2a9152d4-146d-4338-ad03-b20a4f56affd",
+                        "obj_id": "081aa5be-247c-4cea-9c3a-a71eb4d84b1c",
                         "size": {
                             "sector_size": {
                                 "unit": "B",
                                 "value": 512
                             },
-                            "unit": "GiB",
-                            "value": 511
+                            "unit": "B",
+                            "value": 13957595136
                         },
                         "start": {
                             "sector_size": {
                                 "unit": "B",
                                 "value": 512
                             },
-                            "unit": "MiB",
-                            "value": 1025
+                            "unit": "B",
+                            "value": 7517241344
                         },
                         "status": "create",
                         "type": "primary"
@@ -112,14 +138,14 @@
                 ],
                 "wipe": true
             }
-        ],
-        "lvm_config": null
+        ]
     },
     "hostname": "archlinux",
     "kernels": [
         "linux"
     ],
     "locale_config": {
+        "console_font": "default8x16",
         "kb_layout": "us",
         "sys_enc": "UTF-8",
         "sys_lang": "en_US.UTF-8"
@@ -165,7 +191,10 @@
         "grub-btrfs",
         "inotify-tools"
     ],
-    "parallel_downloads": 0,
+    "pacman_config": {
+        "color": true,
+        "parallel_downloads": 5
+    },
     "profile_config": {
         "gfx_driver": "All open-source",
         "greeter": "sddm",
@@ -186,5 +215,5 @@
         "enabled": true
     },
     "timezone": "Europe/Moscow",
-    "version": "3.0.15"
+    "version": "4.4"
 }
