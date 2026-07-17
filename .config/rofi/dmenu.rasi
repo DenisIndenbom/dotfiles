@@ -1,6 +1,4 @@
 configuration {
-    modi:                       "drun";
-    display-drun:               "";
     drun-display-format:        "{name}";
 }
 
@@ -12,7 +10,7 @@ window {
   location:                    center;
   anchor:                      center;
   fullscreen:                  false;
-  width:                       800px;
+  width:                       500px;
   x-offset:                    0px;
   y-offset:                    0px;
 
@@ -70,7 +68,7 @@ entry {
   text-color:                  inherit;
   cursor:                      text;
   placeholder:                 "Type to filter…";
-  placeholder-color:           inherit;
+  placeholder-color:           @overlay1;
 }
 
 listview {

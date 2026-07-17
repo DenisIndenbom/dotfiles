@@ -1,6 +1,6 @@
 configuration {
 	modi:                       "drun";
-    display-drun:               "";
+  display-drun:               "";
 	drun-display-format:        "{name}";
 }
 
@@ -70,7 +70,7 @@ entry {
   text-color:                  inherit;
   cursor:                      text;
   placeholder:                 "Search...";
-  placeholder-color:           inherit;
+  placeholder-color:           @overlay1;
 }
 
 listview {

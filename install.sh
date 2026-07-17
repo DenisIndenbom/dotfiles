@@ -62,7 +62,7 @@ confirm_action() {
 # Array of packages
 packages=(
     # Core desktop components
-    alacritty dunst picom-ftlabs-git pinentry-rofi polybar python-setuptools rofi
+    alacritty dunst picom-ftlabs-git polybar python-setuptools rofi i3lock-color
     # GUI toolkits
     gtk3 gtk4 qt5-quickcontrols2 qt6-declarative qt6-svg
     # Audio
@@ -70,7 +70,7 @@ packages=(
     # Network and Bluetooth
     bluez-utils dmenu-bluetooth networkmanager network-manager-applet networkmanager-dmenu-git
     # Utilities
-    brightnessctl feh i3lock-color ranger neofetch xdotool keepmenu-git
+    brightnessctl pinentry feh ranger neofetch keepmenu-git
     # Desktop tools
     ffmpeg gpick imagemagick maim xclip yad
     # Fonts
@@ -82,7 +82,7 @@ packages=(
     # Notifications
     libnotify notify-send-py
     # X11 utilities
-    xdo xsettingsd
+    xdo xdotool xsettingsd
     # Theming
     catppuccin-cursors-mocha catppuccin-gtk-theme-mocha lxappearance
     # Archives
