@@ -6,7 +6,7 @@ if ! snapper -c root list &>/dev/null; then
     snapper -c root create-config /
 fi
 if ! snapper -c home list &>/dev/null; then
-    snapper -c home create-config /
+    snapper -c home create-config /home
 fi
 
 echo "Starting Snapper timers..."
