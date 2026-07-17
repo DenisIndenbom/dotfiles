@@ -75,15 +75,15 @@
                                 "value": 512
                             },
                             "unit": "GiB",
-                            "value": 6
+                            "value": 16
                         },
                         "start": {
                             "sector_size": {
                                 "unit": "B",
                                 "value": 512
                             },
-                            "unit": "B",
-                            "value": 1074790400
+                            "unit": "MiB",
+                            "value": 1025
                         },
                         "status": "create",
                         "type": "primary"
@@ -121,16 +121,16 @@
                                 "unit": "B",
                                 "value": 512
                             },
-                            "unit": "B",
-                            "value": 13957595136
+                            "unit": "MiB",
+                            "value": 506879
                         },
                         "start": {
                             "sector_size": {
                                 "unit": "B",
                                 "value": 512
                             },
-                            "unit": "B",
-                            "value": 7517241344
+                            "unit": "MiB",
+                            "value": 17409
                         },
                         "status": "create",
                         "type": "primary"
@@ -210,10 +210,6 @@
     },
     "script": null,
     "services": [],
-    "swap": {
-        "algorithm": "zstd",
-        "enabled": true
-    },
     "timezone": "Europe/Moscow",
     "version": "4.4"
 }
