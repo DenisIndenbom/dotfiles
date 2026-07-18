@@ -88,7 +88,7 @@ packages=(
     # Theming
     catppuccin-cursors-mocha catppuccin-gtk-theme-mocha lxappearance
     # Apps
-    thunar firefox
+    gvfs thunar firefox
     # Archives
     unzip
 )
