@@ -49,6 +49,9 @@ bindsym $mod+Shift+b   exec --no-startup-id ~/.config/scripts/menu/bluetooth.sh
 bindsym $mod+Shift+w   exec --no-startup-id ~/.config/scripts/menu/wallpaper.sh
 bindsym $mod+Print     exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --menu
 
+# --- APPS ---
+bindsym $mod+t		   exec --no-startup-id thunar --class "thunar_floating" -w
+
 # --- UTILITIES ---
 bindsym $mod+l         exec --no-startup-id ~/.config/scripts/utilities/lockscreen.sh
 
