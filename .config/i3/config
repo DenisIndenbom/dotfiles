@@ -44,7 +44,6 @@ bindsym $mod+Shift+Return   exec --no-startup-id ~/.config/scripts/utilities/ter
 # --- MENUS ---
 bindsym $mod+d         exec --no-startup-id ~/.config/scripts/menu/launcher.sh drun
 bindsym $mod+p         exec --no-startup-id ~/.config/scripts/menu/power.sh
-bindsym $mod+Shift+p   exec --no-startup-id ~/.config/scripts/menu/keepass.sh
 bindsym $mod+Shift+n   exec --no-startup-id ~/.config/scripts/menu/network.sh
 bindsym $mod+Shift+b   exec --no-startup-id ~/.config/scripts/menu/bluetooth.sh
 bindsym $mod+Shift+w   exec --no-startup-id ~/.config/scripts/menu/wallpaper.sh

@@ -61,8 +61,10 @@ confirm_action() {
 
 # Array of packages
 packages=(
+    # Python
+    python-gobject python-setuptools python3
     # Core desktop components
-    alacritty dunst picom-ftlabs-git polybar python-setuptools rofi i3lock-color
+    alacritty dunst picom polybar rofi i3lock-color
     # GUI toolkits
     gtk3 gtk4 qt5-quickcontrols2 qt6-declarative qt6-svg
     # Audio
@@ -70,7 +72,7 @@ packages=(
     # Network and Bluetooth
     bluez-utils dmenu-bluetooth networkmanager network-manager-applet networkmanager-dmenu-git
     # Utilities
-    brightnessctl pinentry feh ranger neofetch keepmenu-git
+    brightnessctl pinentry feh ranger neofetch
     # Desktop tools
     ffmpeg gpick imagemagick maim xclip yad
     # Fonts
@@ -85,10 +87,10 @@ packages=(
     xdo xdotool xsettingsd
     # Theming
     catppuccin-cursors-mocha catppuccin-gtk-theme-mocha lxappearance
+    # Apps
+    thunar firefox
     # Archives
     unzip
-    # Python
-    python-gobject python3
 )
 
 # SDDM theme configuration
