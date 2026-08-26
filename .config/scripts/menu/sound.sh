@@ -8,7 +8,7 @@ selected=$(
 	cut -d: -f2 | \
 	sed 's/^[[:space:]]*//' | \
 	sort | \
-	rofi -dmenu -i -theme ~/.config/rofi/launcher.rasi -p ""
+	rofi -dmenu -i -theme ~/.config/rofi/dmenu.rasi -p ""
 )
 [[ -z $selected ]] && exit 0
 

@@ -64,7 +64,7 @@ packages=(
     # Python
     python-gobject python-setuptools python3
     # Core desktop components
-    alacritty dunst picom polybar rofi i3lock-color
+    alacritty dunst picom polybar polkit polkit-gnome gnome-keyring rofi i3lock-color
     # GUI toolkits
     gtk3 gtk4 qt5-quickcontrols2 qt6-declarative qt6-svg
     # Audio

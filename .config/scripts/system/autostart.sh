@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Kill already running processs
-process="xsettingsd xautolock xsetroot polybar picom dunst mpd mpDris2 xfce4-power-manager"
+process="xsettingsd xsetroot xautolock polybar picom dunst xfce4-power-manager polkit-gnome"
 for processed in $process; do
   if [ "$(pidof "$processed")" ]; then
 	  killall -9 "$processed"
@@ -22,6 +22,8 @@ xautolock -detectsleep -time 5 -locker "$HOME/.config/scripts/utilities/lockscre
 
 # Power Management
 xfce4-power-manager &
+
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Set/Restore wallpaper
 feh --bg-fill -r "$HOME/.wall" &
