@@ -13,6 +13,11 @@ echo "Starting Snapper timers..."
 systemctl enable --now snapper-timeline.timer snapper-cleanup.timer
 systemctl enable --now btrfs-scrub@-.timer
 
+echo "Enabling swapfile..."
+mkdir -p /swap
+btrfs filesystem mkswapfile --size 2G /swap/swapfile
+swapon /swap/swapfile
+
 echo "Enabling grub-btrfsd..."
 systemctl enable --now grub-btrfsd
 

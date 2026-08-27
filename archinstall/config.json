@@ -17,7 +17,7 @@
     "bootloader_config": {
         "bootloader": "Grub",
         "removable": true,
-        "uki": false
+        "uki": true
     },
     "custom_commands": [],
     "disk_config": {
@@ -45,8 +45,8 @@
                                 "unit": "B",
                                 "value": 512
                             },
-                            "unit": "GiB",
-                            "value": 1
+                            "unit": "MiB",
+                            "value": 256
                         },
                         "start": {
                             "sector_size": {
@@ -55,35 +55,6 @@
                             },
                             "unit": "MiB",
                             "value": 1
-                        },
-                        "status": "create",
-                        "type": "primary"
-                    },
-                    {
-                        "btrfs": [],
-                        "dev_path": null,
-                        "flags": [
-                            "swap"
-                        ],
-                        "fs_type": "linux-swap",
-                        "mount_options": [],
-                        "mountpoint": null,
-                        "obj_id": "9a10878c-03b4-45a0-a936-c0e338549a42",
-                        "size": {
-                            "sector_size": {
-                                "unit": "B",
-                                "value": 512
-                            },
-                            "unit": "GiB",
-                            "value": 16
-                        },
-                        "start": {
-                            "sector_size": {
-                                "unit": "B",
-                                "value": 512
-                            },
-                            "unit": "MiB",
-                            "value": 1025
                         },
                         "status": "create",
                         "type": "primary"
@@ -97,6 +68,10 @@
                             {
                                 "mountpoint": "/home",
                                 "name": "@home"
+                            },
+                            {
+                                "mountpoint": "/swap",
+                                "name": "@swap"
                             },
                             {
                                 "mountpoint": "/var/log",
@@ -122,7 +97,7 @@
                                 "value": 512
                             },
                             "unit": "MiB",
-                            "value": 506879
+                            "value": 524031
                         },
                         "start": {
                             "sector_size": {
@@ -130,7 +105,7 @@
                                 "value": 512
                             },
                             "unit": "MiB",
-                            "value": 17409
+                            "value": 257
                         },
                         "status": "create",
                         "type": "primary"
@@ -209,6 +184,10 @@
         }
     },
     "script": null,
+    "swap": {
+        "algorithm": "zstd",
+        "enabled": false
+    },
     "services": [],
     "timezone": "Europe/Moscow",
     "version": "4.4"
