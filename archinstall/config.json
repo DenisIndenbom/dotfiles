@@ -97,7 +97,7 @@
                                 "value": 512
                             },
                             "unit": "MiB",
-                            "value": 524031
+                            "value": 524030
                         },
                         "start": {
                             "sector_size": {

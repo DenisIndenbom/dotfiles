@@ -15,7 +15,7 @@ systemctl enable --now btrfs-scrub@-.timer
 
 echo "Enabling swapfile..."
 mkdir -p /swap
-btrfs filesystem mkswapfile --size 2G /swap/swapfile
+btrfs filesystem mkswapfile --size 16G /swap/swapfile
 swapon /swap/swapfile
 
 echo "Enabling grub-btrfsd..."
