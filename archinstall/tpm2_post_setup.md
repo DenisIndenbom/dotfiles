@@ -37,7 +37,7 @@ sudo systemd-cryptenroll /dev/sda2 --recovery-key
 ## 4. Привязать LUKS2 к TPM2
 
 ```bash
-sudo systemd-cryptenroll --tpm2-device=auto dev/sda2
+sudo systemd-cryptenroll --tpm2-device=auto /dev/sda2
 ```
 
 Проверить:
