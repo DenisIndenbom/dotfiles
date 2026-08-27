@@ -1,6 +1,11 @@
 #!/bin/bash
 set -euo pipefail
 
+if [[ $EUID -ne 0 ]]; then
+    echo "This script must be run as root" >&2
+    exit 1
+fi
+
 echo "Creating Snapper configs..."
 if ! snapper -c root list &>/dev/null; then
     snapper -c root create-config /
@@ -17,6 +22,8 @@ echo "Enabling swapfile..."
 mkdir -p /swap
 btrfs filesystem mkswapfile --size 16G /swap/swapfile
 swapon /swap/swapfile
+echo -n "# Swapfile" >> /etc/fstab
+echo -n "/swap/swapfile none swap defaults 0 0" >> /etc/fstab
 
 echo "Enabling grub-btrfsd..."
 systemctl enable --now grub-btrfsd
