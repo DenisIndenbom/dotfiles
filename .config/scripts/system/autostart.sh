@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Kill already running processs
+# Kill already running processes
 process="xautolock xss-lock polybar picom dunst powerkit polkit-gnome-authentication-agent-1"
 for processed in $process; do
   if [ "$(pidof "$processed")" ]; then

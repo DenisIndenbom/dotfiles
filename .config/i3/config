@@ -3,6 +3,7 @@ set $mod Mod4
 
 # --- AUTOSTART ---
 exec --no-startup-id ~/.config/scripts/system/autostart.sh
+exec --no-startup-id Telegram -autostart
 
 # --- APPEARANCE ---
 font pango:monospace 8
@@ -33,7 +34,7 @@ for_window [class="(?i).*scratchpad.*"] move scratchpad
 
 for_window [class="KeePassXC"] floating enable
 for_window [class="KeePassXC"] resize set width 1200px height 800px
-for_window [class="KeePassXC"] move absolute position center
+for_window [class="KeePassXC"] move position center
 
 # --- WINDOW MANAGEMENT ---
 floating_modifier $mod

@@ -72,7 +72,7 @@ packages=(
     # Network and Bluetooth
     bluez-utils networkmanager network-manager-applet networkmanager-dmenu-git
     # X11 utilities
-    xdo xdotool xautolock xss-lock xclip
+    xdo xdotool xclip xautolock xss-lock xkb-switch
     # Utilities
     ffmpeg gpick imagemagick maim feh yad brightnessctl
     # Fonts

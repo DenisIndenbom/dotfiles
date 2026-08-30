@@ -32,9 +32,24 @@ set_values () {
 
 
 launch_bar () {
-	for mon in $(polybar --list-monitors | cut -d":" -f1); do
-		MONITOR=$mon polybar -q main -c "$config/config.ini" &
-	done
+  # Kill already running bars
+  if [ "$(pidof "polybar")" ]; then
+	  killall -9 "polybar"
+  fi
+
+  # Launch bar on each monitor
+  monitors=$(polybar -m)
+  echo "$monitors" | while IFS=: read -r monitor rest; do
+    # Skip empty lines
+    [ -z "$monitor" ] && continue
+    
+    # Check if this monitor is primary
+    if [[ "$rest" == *"primary"* ]]; then
+        MONITOR="$monitor" polybar main &
+    else
+        MONITOR="$monitor" polybar external &
+    fi
+  done
 }
 
 if [ ! -f "$cache/system.ini" ]; then
