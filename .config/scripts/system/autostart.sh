@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Kill already running processs
-process="xsettingsd xsetroot xautolock polybar picom dunst xfce4-power-manager polkit-gnome"
+process="xautolock xss-lock polybar picom dunst powerkit polkit-gnome-authentication-agent-1"
 for processed in $process; do
   if [ "$(pidof "$processed")" ]; then
 	  killall -9 "$processed"
@@ -11,18 +11,14 @@ done
 # Fix Java programs
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-# Load xsettingsd
-xsettingsd &
-
-# Fix cursor
-xsetroot -cursor_name left_ptr &
-
 # Autolock
-xautolock -detectsleep -time 5 -locker "$HOME/.config/scripts/utilities/lockscreen.sh" &
+xautolock -detectsleep -time 2 -locker "$HOME/.config/scripts/utilities/lockscreen.sh" &
+xss-lock .config/scripts/utilities/lockscreen.sh &
 
 # Power Management
-xfce4-power-manager &
+powerkit &
 
+# Polkit Auth Agent
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Set/Restore wallpaper

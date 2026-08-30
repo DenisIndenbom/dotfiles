@@ -64,31 +64,29 @@ packages=(
     # Python
     python-gobject python-setuptools python3
     # Core desktop components
-    alacritty dunst picom polybar polkit polkit-gnome gnome-keyring rofi i3lock-color
+    alacritty dunst picom polybar pinentry polkit polkit-gnome gnome-keyring rofi i3lock-color 
     # GUI toolkits
     gtk3 gtk4 qt5-quickcontrols2 qt6-declarative qt6-svg
     # Audio
     alsa-utils pamixer pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber
     # Network and Bluetooth
-    bluez-utils dmenu-bluetooth networkmanager network-manager-applet networkmanager-dmenu-git
+    bluez-utils networkmanager network-manager-applet networkmanager-dmenu-git
+    # X11 utilities
+    xdo xdotool xautolock xss-lock xclip
     # Utilities
-    brightnessctl pinentry feh ranger neofetch
-    # Desktop tools
-    ffmpeg gpick imagemagick maim xclip yad
+    ffmpeg gpick imagemagick maim feh yad brightnessctl
     # Fonts
     consolas-font ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-roboto ttf-sarasa-gothic
     # Music
     mpd mpdris2 ncmpcpp playerctl
     # Power management
-    xfce4-power-manager
+    powerkit-git
     # Notifications
     libnotify notify-send-py
-    # X11 utilities
-    xdo xdotool xsettingsd
     # Theming
     catppuccin-cursors-mocha catppuccin-gtk-theme-mocha lxappearance
     # Apps
-    gvfs thunar firefox
+    gvfs thunar firefox ranger neofetch
     # Archives
     unzip
 )
