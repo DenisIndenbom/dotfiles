@@ -96,23 +96,20 @@ element-text {
   horizontal-align:               0.5;
 }
 
-element selected.normal,
-element selected.urgent,
-element selected.active {
+element selected {
   background-color:               @lavender;
   text-color:                     @mantle;
   border-radius:                  8px;
 }
 
-element normal.urgent,
-element alternate.urgent {
+element normal.urgent {
   background-color:               @red;
   text-color:                     @mantle;
   border-radius:                  8px;
 }
 
 element normal.active,
-element alternate.active {
+{
   background-color:               @green;
   text-color:                     @mantle;
   border-radius:                  8px;
@@ -126,16 +123,6 @@ message {
   border-color:                   @lavender;
   background-color:               @mantle;
   text-color:                     @text;
-}
-
-textbox {
-  background-color:               inherit;
-  text-color:                     inherit;
-  vertical-align:                 0.5;
-  horizontal-align:               0.5;
-  placeholder-color:              @text;
-  blink:                          true;
-  markup:                         true;
 }
 
 error-message {

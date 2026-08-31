@@ -55,6 +55,7 @@ prompt {
   text-color:                  inherit;
   padding:                     0 5 0 0;
 }
+
 textbox-prompt-colon {
   enabled:                     false;
   expand:                      false;
@@ -62,6 +63,7 @@ textbox-prompt-colon {
   background-color:            inherit;
   text-color:                  inherit;
 }
+
 entry {
   enabled:                     true;
   background-color:            inherit;
@@ -93,6 +95,7 @@ listview {
   text-color:                  @text;
   cursor:                      "default";
 }
+
 scrollbar {
   handle-width:                5px ;
   handle-color:                @accent;
@@ -112,14 +115,7 @@ element {
   text-color:                  @text;
   cursor:                      pointer;
 }
-element normal {
-  background-color:            @base;
-  text-color:                  @text;
-}
-element selected {
-  background-color:            @accent;
-  text-color:                  @base;
-}
+
 element-icon {
   enabled:                     false;
 }
@@ -133,6 +129,19 @@ element-text {
   horizontal-align:            0.0;
 }
 
+element selected {
+  background-color:            @accent;
+  text-color:                  @base;
+}
+
+element normal.active {
+  text-color:                  @accent;
+}
+
+element normal.urgent {
+  text-color:                  @red;
+}
+
 error-message {
   padding:                     15px;
   border:                      2px solid;
@@ -140,11 +149,4 @@ error-message {
   border-color:                @accent;
   background-color:            @base;
   text-color:                  @text;
-}
-textbox {
-  background-color:            @base;
-  text-color:                  @text;
-  vertical-align:              0.5;
-  horizontal-align:            0.0;
-  highlight:                   none;
 }
