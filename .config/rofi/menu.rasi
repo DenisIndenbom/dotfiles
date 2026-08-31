@@ -1,5 +1,7 @@
 configuration {
   show-icons:                     false;
+  disable-history:                false;
+  sidebar-mode:                   false;
 }
 
 @import "colors.rasi"
@@ -43,8 +45,8 @@ dummy {
 
 textbox-prompt-colon {
   enabled:                        true;
+  str:                            "Menu";
   expand:                         false;
-  str:                            "System";
   padding:                        15px;
   border-radius:                  100%;
   background-color:               @mantle;
@@ -86,7 +88,7 @@ element {
 }
 
 element-text {
-  font:                           "JetBrainsMono Nerd 20";
+  font:                           "JetBrainsMono Nerd Font 24";
   background-color:               transparent;
   text-color:                     inherit;
   cursor:                         inherit;
@@ -94,9 +96,26 @@ element-text {
   horizontal-align:               0.5;
 }
 
-element selected.normal {
+element selected.normal,
+element selected.urgent,
+element selected.active {
   background-color:               @lavender;
   text-color:                     @mantle;
+  border-radius:                  8px;
+}
+
+element normal.urgent,
+element alternate.urgent {
+  background-color:               @red;
+  text-color:                     @mantle;
+  border-radius:                  8px;
+}
+
+element normal.active,
+element alternate.active {
+  background-color:               @green;
+  text-color:                     @mantle;
+  border-radius:                  8px;
 }
 
 message {
@@ -108,6 +127,7 @@ message {
   background-color:               @mantle;
   text-color:                     @text;
 }
+
 textbox {
   background-color:               inherit;
   text-color:                     inherit;
@@ -117,6 +137,7 @@ textbox {
   blink:                          true;
   markup:                         true;
 }
+
 error-message {
   padding:                        15px;
   border:                         0px solid;

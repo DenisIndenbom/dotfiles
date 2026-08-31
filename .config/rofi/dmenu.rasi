@@ -10,7 +10,7 @@ window {
   location:                    center;
   anchor:                      center;
   fullscreen:                  false;
-  width:                       500px;
+  width:                       600px;
   x-offset:                    0px;
   y-offset:                    0px;
 
@@ -112,15 +112,14 @@ element {
   text-color:                  @text;
   cursor:                      pointer;
 }
-element normal.normal {
+element normal {
   background-color:            @base;
   text-color:                  @text;
 }
-element selected.normal {
+element selected {
   background-color:            @accent;
   text-color:                  @base;
 }
-
 element-icon {
   enabled:                     false;
 }

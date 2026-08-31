@@ -2,14 +2,26 @@
 
 icon="$HOME/.config/dunst/icons/device-speaker.svg"
 
+# Get the default sink name
+default_sink=$(pactl get-default-sink)
+
+# Get the description for the default sink
+default_desc=$(pactl list sinks | \
+    grep -A1 "Name: $default_sink" | \
+    grep -ie "description:" | \
+    cut -d: -f2 | \
+    sed 's/^[[:space:]]*//')
+
+# Show rofi with the default entry preselected by string
 selected=$(
-	pactl list sinks | \
-	grep -ie "description:" | \
-	cut -d: -f2 | \
-	sed 's/^[[:space:]]*//' | \
-	sort | \
-	rofi -dmenu -i -theme ~/.config/rofi/dmenu.rasi -p ""
+    pactl list sinks | \
+    grep -ie "description:" | \
+    cut -d: -f2 | \
+    sed 's/^[[:space:]]*//' | \
+    sort | \
+    rofi -dmenu -i -theme ~/.config/rofi/dmenu.rasi -p "" -select "$default_desc"
 )
+
 [[ -z $selected ]] && exit 0
 
 # Figure out what the device name is based on the description passed.

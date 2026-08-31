@@ -74,11 +74,9 @@ packages=(
     # X11 utilities
     xdo xdotool xclip xautolock xss-lock xkb-switch
     # Utilities
-    ffmpeg gpick imagemagick maim feh yad brightnessctl
+    ffmpeg gpick imagemagick maim feh yad brightnessctl playerctl
     # Fonts
     consolas-font ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-roboto ttf-sarasa-gothic
-    # Music
-    mpd mpdris2 ncmpcpp playerctl
     # Power management
     powerkit-git
     # Notifications

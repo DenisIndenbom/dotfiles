@@ -1,7 +1,7 @@
 #!/bin/sh
 
-config="$HOME/.config/rofi/power.rasi"
-script_dir="$(cd "$(dirname "$0")" >/dev/null 2>&1 && pwd)"
+theme="$HOME/.config/rofi/menu.rasi"
+theme_str='textbox-prompt-colon{str: "System";}'
 
 shutdown=""
 reboot=""
@@ -9,7 +9,7 @@ lock="󰌾"
 suspend="󰖔"
 logout="󰗽"
 
-chosen="$(printf "%s\n%s\n%s\n%s\n%s\n" "$shutdown" "$reboot" "$lock" "$suspend" "$logout" | rofi -theme "$config" -p "$(uptime -p)" -dmenu -selected-row 2)"
+chosen="$(printf "%s\n%s\n%s\n%s\n%s\n" "$shutdown" "$reboot" "$lock" "$suspend" "$logout" | rofi -theme "$theme" -theme-str "$theme_str" -p "$(uptime -p)" -dmenu -selected-row 2)"
 
 execute () {
   yad --title "Are you sure you want to $2?" --button "Yes":0 --button "No":1 --buttons-layout center --center --on-top --fixed
@@ -31,9 +31,9 @@ case "$chosen" in
     sh "$HOME/.config/scripts/utilities/lockscreen.sh"
   ;;
   "$suspend")
-    execute "systemctl suspend" "suspend"
+    execute "systemctl suspend-then-hibernate" "suspend"
   ;;
   "$logout")
-    execute "kill -9 -1" "quit"
+    execute "i3-msg exit" "quit"
   ;;
 esac
