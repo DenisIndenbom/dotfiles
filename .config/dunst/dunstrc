@@ -35,11 +35,8 @@
   sticky_history = no
   history_length = 6
 
-  title = Notification
-  class = Notification
-
-  mouse_left_click = close_current
-  mouse_middle_click = do_action
+  mouse_left_click = do_action, close_current
+  mouse_middle_click = context, close_current
   mouse_right_click = close_all
 
   progress_bar = true
@@ -48,20 +45,25 @@
   progress_bar_max_width = 280
   progress_bar_corner_radius = 5
 
+  dmenu = /usr/bin/rofi -dmenu -theme "$HOME/.config/rofi/dmenu.rasi" -p 
+
 [urgency_low]
   background = "#1e1e2e"
-  foreground = "#a6adc8"
+  foreground = "#cdd6f4"
   frame_color = "#b4befe"
-  timeout = 5
+  highlight = "#b4befe"
+  timeout = 2
 
 [urgency_normal]
   background = "#1e1e2e"
   foreground = "#cdd6f4"
   frame_color = "#b4befe"
-  timeout = 10
+  highlight = "#b4befe"
+  timeout = 5
 
 [urgency_critical]
   background = "#1e1e2e"
   foreground = "#cdd6f4"
   frame_color = "#f38ba8"
-  timeout = 20
+  highlight = "#f38ba8"
+  timeout = 10

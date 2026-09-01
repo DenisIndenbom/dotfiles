@@ -13,7 +13,7 @@ notify () {
         icon="$icon_path/volume-high.svg"
     fi
 
-    notify-send -a "Volume" -u normal -i "$icon" -r 696969 "Volume : $volume"
+    notify-send -u low -i "$icon" -r 696969 "Volume : $volume"
 }
 
 docs () {
@@ -40,7 +40,7 @@ case $1 in
 	    pamixer -t
         if [ "$(pamixer --get-mute)" = "true" ]; then
             icon="$icon_path/volume-mute.svg"
-            notify-send -a Volume -i "$icon" -r 699 "Volume : Muted"
+            notify-send -u low -i "$icon" -r 696969 "Volume : Muted"
         else
             notify
         fi

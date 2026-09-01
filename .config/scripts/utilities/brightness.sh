@@ -3,7 +3,7 @@
 icon_path="$HOME/.config/dunst/icons"
 
 notify () {
-  brightness=$(brightnessctl i | grep -oP '\(\K[^%\)]+')
+    brightness=$(brightnessctl i | grep -oP '\(\K[^%\)]+')
 
     if [ "$brightness" -lt "35" ]; then
         icon="$icon_path/moon.svg"
@@ -13,7 +13,7 @@ notify () {
         icon="$icon_path/sun.svg"
     fi
 
-    notify-send -a Brightness -i "$icon" -t 2000 -r 969696 "Brightness : $brightness"
+    notify-send -u low -i "$icon" -r 969696 "Brightness : $brightness"
 }
 
 docs () {

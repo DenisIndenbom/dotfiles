@@ -50,6 +50,7 @@ bindsym $mod+p         exec --no-startup-id ~/.config/scripts/menu/power.sh
 bindsym $mod+m         exec --no-startup-id ~/.config/scripts/menu/player.sh
 bindsym $mod+Shift+n   exec --no-startup-id ~/.config/scripts/menu/network.sh
 bindsym $mod+Shift+b   exec --no-startup-id ~/.config/scripts/menu/bluetooth.sh
+bindsym $mod+Shift+m   exec --no-startup-id ~/.config/scripts/menu/sound.sh
 bindsym $mod+Shift+w   exec --no-startup-id ~/.config/scripts/menu/wallpaper.sh
 bindsym $mod+Print     exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --menu
 
