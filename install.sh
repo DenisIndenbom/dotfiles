@@ -84,7 +84,7 @@ packages=(
     # Theming
     catppuccin-cursors-mocha catppuccin-gtk-theme-mocha lxappearance
     # Apps
-    gvfs thunar firefox ranger neofetch
+    gvfs thunar firefox ranger neofetch cava
     # Archives
     unzip
 )
