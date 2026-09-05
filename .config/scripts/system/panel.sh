@@ -24,7 +24,7 @@ set_values () {
   if [ "$card" ]; then
     sed -i -e "s/graphics_card = .*/graphics_card = $card/g" "$config/system.ini"
   fi
-	
+
   if [ "$interface" ]; then
     sed -i -e "s/network_interface = .*/network_interface = $interface/g" "$config/system.ini"
   fi
@@ -42,12 +42,12 @@ launch_bar () {
   echo "$monitors" | while IFS=: read -r monitor rest; do
     # Skip empty lines
     [ -z "$monitor" ] && continue
-    
+
     # Check if this monitor is primary
     if [[ "$rest" == *"primary"* ]]; then
-        MONITOR="$monitor" polybar main &
+        MONITOR="$monitor" polybar main &> /dev/null &
     else
-        MONITOR="$monitor" polybar external &
+        MONITOR="$monitor" polybar external &> /dev/null &
     fi
   done
 }

@@ -19,6 +19,7 @@ xkb-switch -s "us"
 
 # --- Launch i3lock-color ---
 i3lock \
+    -S 1 \
     --fill \
     -i "$background" \
     -n -e \

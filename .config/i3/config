@@ -102,8 +102,8 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # Floating & focus toggles
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+space       focus mode_toggle
+bindsym $mod+space          floating toggle
+bindsym $mod+Shift+space    focus mode_toggle
 
 # --- WORKSPACES ---
 # Define workspace names

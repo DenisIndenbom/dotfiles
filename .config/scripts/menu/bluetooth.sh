@@ -85,7 +85,7 @@ scan_on() {
 # Performs a scan for devices (blocking, with timeout)
 perform_scan() {
     if scan_on; then
-        notify -t 2000 "Bluetooth" "Scan already in progress"
+        notify -u low "Bluetooth" "Scan already in progress"
         return
     fi
     notify -t 5000 "Bluetooth" "Scanning for devices..."
@@ -93,6 +93,7 @@ perform_scan() {
         notify -u critical "Bluetooth" "Scan failed"
         return 1
     fi
+    notify "Bluetooth" "Scan complete"
 }
 
 # Returns 0 if controller is pairable
