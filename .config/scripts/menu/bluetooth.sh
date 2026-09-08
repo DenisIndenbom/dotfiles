@@ -73,8 +73,8 @@ toggle_power() {
             notify -u critical "Bluetooth" "Failed to power on"
             return 1
         fi
+        show_menu
     fi
-    show_menu
 }
 
 # Returns 0 if controller is scanning

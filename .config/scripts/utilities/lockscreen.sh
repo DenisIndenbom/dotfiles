@@ -14,6 +14,11 @@ font="JetBrains Mono"
 # --- Background ---
 background="$HOME/.lock"
 
+# --- Check i3lock is not running ---
+if [ "$(pidof i3lock)" ]; then
+    exit
+fi
+
 # --- Switch to US keyboard layout ---
 xkb-switch -s "us"
 

@@ -1,28 +1,29 @@
 #!/bin/sh
 
 # Kill already running processes
-process="xautolock xss-lock polybar picom dunst powerkit polkit-gnome-authentication-agent-1"
+process="batsignal powerkit polkit-gnome-authentication-agent-1"
 for processed in $process; do
   if [ "$(pidof "$processed")" ]; then
 	  killall -9 "$processed"
   fi
 done
 
-# Fix Java programs
-export _JAVA_AWT_WM_NONREPARENTING=1
-
-# Autolock
-xautolock -detectsleep -time 2 -locker "$HOME/.config/scripts/utilities/lockscreen.sh" &
-xss-lock .config/scripts/utilities/lockscreen.sh &
-
 # Power Management
 powerkit &
+batsignal -b -N \
+  -w 10 -c 5 \
+  -W "Battery low" \
+  -C "Battery critical" \
+  -M "notify-send -u critical -i $HOME/.config/dunst/icons/battery-low.svg '%s' 'Level: %s%%'"
 
 # Polkit Auth Agent
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Set/Restore wallpaper
 feh --bg-fill -r "$HOME/.wall" &
+
+# Autolock
+sh "$HOME/.config/scripts/system/autolock.sh" &
 
 # Panel
 sh "$HOME/.config/scripts/system/panel.sh" &

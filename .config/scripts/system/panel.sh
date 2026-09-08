@@ -33,7 +33,7 @@ set_values () {
 
 launch_bar () {
   # Kill already running bars
-  if [ "$(pidof "polybar")" ]; then
+  if [ "$(pidof polybar)" ]; then
 	  killall -9 "polybar"
   fi
 

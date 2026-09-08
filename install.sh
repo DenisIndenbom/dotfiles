@@ -72,13 +72,13 @@ packages=(
     # Network and Bluetooth
     bluez-utils networkmanager network-manager-applet networkmanager-dmenu-git
     # X11 utilities
-    xdo xdotool xclip xautolock xss-lock xkb-switch
+    xdo xdotool xclip xidlehook xss-lock xkb-switch
     # Utilities
     ffmpeg gpick imagemagick maim feh yad brightnessctl playerctl
     # Fonts
     consolas-font ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-roboto ttf-sarasa-gothic
     # Power management
-    powerkit-git
+    powerkit-git batsignal
     # Notifications
     libnotify notify-send-py
     # Theming

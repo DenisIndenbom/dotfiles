@@ -1,10 +1,9 @@
 [global]
   monitor = 0
   follow = mouse
-  shrink = no
 
-  width = 265
-  height = (0, 120)
+  width = (256, 300)
+  height = (0, 256)
   offset = (15, 45)
   origin = top-right
   padding = 20
@@ -25,13 +24,13 @@
   show_age_threshold = 60
 
   icon_position = left
-  max_icon_size = 64
-  min_icon_size = 32
+  min_icon_size = 48
+  max_icon_size = 48
 
   sort = no
   stack_duplicates = true
   hide_duplicate_count = no
-  show_indicators = yes
+  show_indicators = no
   sticky_history = no
   history_length = 6
 
@@ -46,6 +45,7 @@
   progress_bar_corner_radius = 5
 
   dmenu = /usr/bin/rofi -dmenu -theme "$HOME/.config/rofi/dmenu.rasi" -p 
+  browser = /usr/bin/xdg-open
 
 [urgency_low]
   background = "#1e1e2e"

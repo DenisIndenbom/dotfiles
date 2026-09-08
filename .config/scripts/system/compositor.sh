@@ -1,5 +1,7 @@
 #!/bin/sh
 
-config="$HOME/.config/picom/picom.conf"
+if [ "$(pidof picom)" ]; then
+    killall -9 "picom"
+fi
 
-picom --config "$config" &
+picom --config "$HOME/.config/picom/picom.conf" &

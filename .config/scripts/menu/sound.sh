@@ -31,8 +31,8 @@ device=$(pactl list sinks | grep -C2 "Description: ${selected}$" | grep Name | c
 if pactl set-default-sink "$device"
 then
 	# If it worked, alert the user.
-	notify-send -i "$icon" -t 2000 -r 2 -u low "Activated: $selected"
+	notify-send -i "$icon" -r 9999 -u low "Activated:" "$selected"
 else
 	# If it didn't work, critically alert the user.
-	notify-send -i "$icon" -t 2000 -r 2 -u critical "Error activating $selected"
+	notify-send -i "$icon" -r 9999 -u critical "Failed activate:" "$selected"
 fi
