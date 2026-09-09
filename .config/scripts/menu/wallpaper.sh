@@ -1,13 +1,20 @@
 #!/bin/bash
 
-WALL_DIR="$HOME/.config/wallpapers"
+WALL_DIRS=(
+    "$HOME/.config/wallpapers"
+    "$HOME/wallpapers"
+)
 
 SELECTED=$(
-	find "$WALL_DIR" -type f | while read -r img; do
- 	[[ "$img" =~ \.(jpg|jpeg|png|webp|JPG|PNG)$ ]] || continue
+    for WALL_DIR in "${WALL_DIRS[@]}"; do
+        [[ -d "$WALL_DIR" ]] || continue
 
-        REL_PATH="${img#$WALL_DIR/}"
-	printf "%s\0icon\x1f%s\n" "$REL_PATH" "$img"
+        find "$WALL_DIR" -type f | while read -r img; do
+            [[ "$img" =~ \.(jpg|jpeg|png|webp|JPG|JPEG|PNG|WEBP)$ ]] || continue
+
+            NAME=$(basename "$img")
+            printf "%s\0icon\x1f%s\n" "$NAME" "$img"
+        done
     done | rofi \
         -dmenu \
         -i \
@@ -18,5 +25,11 @@ SELECTED=$(
 
 [[ -z "$SELECTED" ]] && exit 0
 
-cp "$WALL_DIR/$SELECTED" "$HOME/.wall"
-feh --bg-fill -r "$HOME/.wall" &
+for WALL_DIR in "${WALL_DIRS[@]}"; do
+    if [[ -f "$WALL_DIR/$SELECTED" ]]; then
+        ln -sf "$WALL_DIR/$SELECTED" "$HOME/.wall"
+        break
+    fi
+done
+
+feh --bg-fill "$HOME/.wall" &
