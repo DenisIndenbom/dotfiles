@@ -8,6 +8,7 @@
   origin = top-right
   padding = 20
   horizontal_padding = 20
+  gap_size = 5
 
   frame_width = 2
   frame_color = "#b4befe"
