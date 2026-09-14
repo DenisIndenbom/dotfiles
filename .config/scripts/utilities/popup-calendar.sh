@@ -1,33 +1,28 @@
 #!/bin/sh
 
-BAR_HEIGHT=22  # polybar height
-BORDER_SIZE=1  # border size from your wm settings
-YAD_WIDTH=222  # 222 is minimum possible value
-YAD_HEIGHT=193 # 193 is minimum possible value
+BAR_HEIGHT="${BAR_HEIGHT:-20}"
+YAD_WIDTH="${YAD_WIDTH:-222}"
+YAD_HEIGHT="${YAD_HEIGHT:-193}"
+RIGHT_OFFSET="${RIGHT_OFFSET:-55}"
 
-if [ "$(xdotool getwindowfocus getwindowname)" = "yad-calendar" ]; then
-	exit 0
+if [ "$(xdotool getwindowfocus getwindowname 2>/dev/null)" = "yad-calendar" ]; then
+    exit 0
 fi
 
-eval "$(xdotool getmouselocation --shell)"
-eval "$(xdotool getdisplaygeometry --shell)"
+WIDTH=$(xdotool getdisplaygeometry | cut -d' ' -f1)
 
-# X
-if [ "$((X + YAD_WIDTH / 2 + BORDER_SIZE))" -gt "$WIDTH" ]; then #Right side
-	: $((pos_x = WIDTH - YAD_WIDTH - BORDER_SIZE))
-elif [ "$((X - YAD_WIDTH / 2 - BORDER_SIZE))" -lt 0 ]; then #Left side
-	: $((pos_x = BORDER_SIZE))
-else #Center
-	: $((pos_x = X - YAD_WIDTH / 2))
-fi
+pos_x=$(( (WIDTH - YAD_WIDTH - RIGHT_OFFSET) / 2 ))
+pos_y=$BAR_HEIGHT
 
-# Y
-if [ "$Y" -gt "$((HEIGHT / 2))" ]; then #Bottom
-	: $((pos_y = HEIGHT - YAD_HEIGHT - BAR_HEIGHT - BORDER_SIZE))
-else #Top
-	: $((pos_y = BAR_HEIGHT + BORDER_SIZE))
-fi
-
-yad --calendar --undecorated --fixed --close-on-unfocus --no-buttons \
-	--width="$YAD_WIDTH" --height="$YAD_HEIGHT" --posx="$pos_x" --posy="$pos_y" \
-	--title="yad-calendar" --borders=0 >/dev/null &
+exec yad --calendar \
+    --undecorated \
+    --fixed \
+    --close-on-unfocus \
+    --no-buttons \
+    --width="$YAD_WIDTH" \
+    --height="$YAD_HEIGHT" \
+    --posx="$pos_x" \
+    --posy="$pos_y" \
+    --title="yad-calendar" \
+    --borders=0 \
+    >/dev/null

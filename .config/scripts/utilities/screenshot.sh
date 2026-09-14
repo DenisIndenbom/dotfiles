@@ -1,13 +1,11 @@
 #!/bin/sh
 
-script_dir="$(cd "$(dirname "$0")" >/dev/null 2>&1 && pwd)"
 icon_path="$HOME/.config/dunst/icons"
 
-clock=$(date +%Y-%m-%d-%I-%M-%S)
-geometry=$(xrandr | head -n1 | cut -d',' -f2 | tr -d '[:blank:],current')
+clock=$(date +%Y_%m_%d_at_%Hh%Mm%Ss)
 
 dir="$HOME/screenshots"
-file="screenshot_${clock}_${geometry}.png"
+file="$dir/screenshot_${clock}.png"
 
 [ ! -d "$dir" ] && mkdir -p "$dir"
 
@@ -24,33 +22,33 @@ countdown() {
 	for sec in $(seq "$1" -1 1); do
 		notify-send \
 			-a Clock \
-			-u normal \
-			-t 1000 \
 			-i "$icon_path/timer.svg" \
-			"Countdown" "Taking shot in : $sec"
+			-t 1050 \
+			-r 699 "Countdown" "Taking shot in : $sec"
 		sleep 1
 	done
 }
 
-screen() {
+capture() {
 	cd "$dir" || exit
-	maim -u -f png "$file"
-	xclip -selection clipboard -t image/png -i "$file"
+	if ! maim -u -f png "$@" "$file"; then
+		[ -f "$file" ] && rm -f "$file"
+		return 1
+	fi
+	xclip -selection clipboard -t image/png -i "$file" || return 1
 	notify_user
+}
+
+screen() {
+	capture
 }
 
 window() {
-	cd "$dir" || exit
-	maim -u -f png -i "$(xdotool getactivewindow)" "$file"
-	xclip -selection clipboard -t image/png -i "$file"
-	notify_user
+	capture -i "$(xdotool getactivewindow)"
 }
 
 area() {
-	cd "$dir" || exit
-	maim -u -f png -s -b 2 -c 0.35,0.55,0.85,0.25 -l "$file"
-	xclip -selection clipboard -t image/png -i "$file"
-	notify_user
+	capture -s -b 2 -c 0.35,0.55,0.85,0.25 -l
 }
 
 timer() {
