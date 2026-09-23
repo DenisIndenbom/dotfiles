@@ -20,16 +20,16 @@ batsignal -b -N \
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Set/Restore wallpaper
-feh --bg-fill -r "$HOME/.wall" &
+swaybg -m fill -i "$HOME/.wall" &
 
 # Autolock
-sh "$HOME/.config/scripts/system/autolock.sh" &
-
-# Panel
-sh "$HOME/.config/scripts/system/panel.sh" &
+swayidle -w \
+  timeout 110 'brightnessctl -s set 10%' resume 'brightnessctl -r' \
+  timeout 120 '~/.config/scripts/utilities/lockscreen.sh' resume 'brightnessctl -r' \
+  before-sleep '~/.config/scripts/utilities/lockscreen.sh' &
 
 # Notification
-sh "$HOME/.config/scripts/system/notifications.sh" &
+dunst -config "$HOME/.config/dunst/dunstrc" &
 
-# Compositor
-sh "$HOME/.config/scripts/system/compositor.sh" &
+# Panel
+waybar &

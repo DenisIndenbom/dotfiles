@@ -32,4 +32,4 @@ for WALL_DIR in "${WALL_DIRS[@]}"; do
     fi
 done
 
-feh --bg-fill "$HOME/.wall" &
+swaybg -m fill -i "$HOME/.wall" &

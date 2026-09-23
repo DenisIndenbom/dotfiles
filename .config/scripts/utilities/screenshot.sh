@@ -31,11 +31,11 @@ countdown() {
 
 capture() {
 	cd "$dir" || exit
-	if ! maim -u -f png "$@" "$file"; then
+	if ! grim "$@" "$file"; then
 		[ -f "$file" ] && rm -f "$file"
 		return 1
 	fi
-	xclip -selection clipboard -t image/png -i "$file" || return 1
+	wl-copy --type image/png < "$file" || return 1
 	notify_user
 }
 
@@ -44,11 +44,11 @@ screen() {
 }
 
 window() {
-	capture -i "$(xdotool getactivewindow)"
+	capture -g "$(swaymsg -t get_tree | jq -r '.. | select(.focused?) | "\(.rect.x),\(.rect.y) \(.rect.width)x\(.rect.height)"')"
 }
 
 area() {
-	capture -s -b 2 -c 0.35,0.55,0.85,0.25 -l
+	capture -g "$(slurp -b 2 -c '#598cd940')"
 }
 
 timer() {

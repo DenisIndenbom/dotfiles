@@ -70,7 +70,7 @@ packages=(
     # Audio
     alsa-utils pamixer pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber
     # Network and Bluetooth
-    bluez-utils networkmanager networkmanager-dmenu
+    bluez-utils networkmanager network-manager-applet networkmanager-dmenu-git
     # X11 utilities
     xdo xdotool xclip xidlehook xss-lock xkb-switch
     # Utilities

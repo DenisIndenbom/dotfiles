@@ -14,65 +14,48 @@ font="JetBrains Mono"
 # --- Background ---
 background="$HOME/.lock"
 
-# --- Check i3lock is not running ---
-if [ "$(pidof i3lock)" ]; then
+# --- Check swaylock is not running ---
+if [ "$(pidof swaylock)" ]; then
     exit
 fi
 
-# --- Switch to US keyboard layout ---
-xkb-switch -s "us"
-
-# --- Launch i3lock-color ---
-i3lock \
-    -S 1 \
-    --fill \
-    -i "$background" \
-    -n -e \
-    -c 00000000 \
-    --pass-media-keys \
-    --pass-power-keys \
-    --pass-screen-keys \
-    --pass-volume-keys \
+# --- Launch swaylock-effects ---
+swaylock \
+    --image "$background" \
+    --scaling fill \
+    --color 00000000 \
+    --ignore-empty-password \
     \
     --indicator \
-    --ind-pos="w/2:h/2" \
-    --radius 100 \
-    --ring-width 6 \
-    --ring-color="$mantle" \
-    --ringver-color="$green" \
-    --ringwrong-color="$red" \
-    --inside-color="$base" \
-    --insidever-color="$mantle" \
-    --insidewrong-color="$mantle" \
+    --indicator-radius 100 \
+    --indicator-thickness 6 \
+    --ring-color "$mantle" \
+    --ring-ver-color "$green" \
+    --ring-wrong-color "$red" \
+    --ring-clear-color "$accent" \
+    --inside-color "$base" \
+    --inside-ver-color "$mantle" \
+    --inside-wrong-color "$mantle" \
+    --inside-clear-color "$mantle" \
     --line-uses-inside \
+    --line-clear-color "$accent" \
     \
     --clock \
-    --time-str="%H:%M" \
-    --time-font="$font" \
-    --time-size=22 \
-    --time-color="$text" \
+    --timestr "%H:%M" \
+    --datestr "%Y-%m-%d" \
+    --font "$font" \
+    --font-size 20 \
+    --text-color "$text" \
+    --text-ver-color "$green" \
+    --text-wrong-color "$red" \
+    --text-clear-color "$accent" \
     \
-    --date-str="%Y-%m-%d" \
-    --date-font="$font" \
-    --date-size=20 \
-    --date-color="$accent" \
-    \
-    --verif-text="Verifying..." \
-    --verif-color="$green" \
-    --verif-font="$font" \
-    --verif-size=16 \
-    --verif-pos="w/2:h/2+10" \
-    \
-    --wrong-text="Incorrect password" \
-    --wrong-color="$red" \
-    --wrong-font="$font" \
-    --wrong-size=16 \
-    --wrong-pos="w/2:h/2+10" \
-    \
-    --keyhl-color="$accent" \
-    --bshl-color="$accent" \
-    --separator-color="$mantle" \
-    --pointer=default \
-    \
+    --key-hl-color "$accent" \
+    --bs-hl-color "$accent" \
+    --separator-color "$mantle" \
     --show-failed-attempts \
-    --status-pos="w/2:h/2+10"
+    \
+    --hide-keyboard-layout \
+    --layout-bg-color "$mantle" \
+    --layout-border-color "$accent" \
+    --layout-text-color "$text"

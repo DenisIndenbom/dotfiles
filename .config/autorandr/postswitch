@@ -1,4 +1,0 @@
-#!/bin/sh
-
-feh --bg-fill -r "$HOME/.wall" &
-sh "$HOME/.config/scripts/system/panel.sh" &

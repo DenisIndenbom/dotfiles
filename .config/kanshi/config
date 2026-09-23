@@ -1,0 +1,26 @@
+profile "laptop" {
+    output "eDP" enable
+}
+
+profile "hdmi" {
+    output "eDP" enable
+    output "HDMI-A-1" enable
+}
+
+profile "dp" {
+    output "eDP" enable
+    output "DP-1" enable
+}
+
+profile "docked-dp" {
+    output "DP-1" enable
+}
+
+profile "docked-hdmi" {
+    output "HDMI-A-1" enable
+}
+
+profile "docked-both" {
+    output "DP-1" enable
+    output "HDMI-A-1" enable
+}
