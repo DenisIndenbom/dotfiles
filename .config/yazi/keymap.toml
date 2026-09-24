@@ -1,0 +1,44 @@
+[mgr]
+keymap = [
+    { on = "<Up>",        run = "arrow -1" },
+    { on = "<Down>",      run = "arrow 1" },
+    { on = "<Left>",      run = "leave" },
+    { on = "<Right>",     run = "enter" },
+    { on = "<Enter>",     run = "plugin smart-enter" },
+    { on = "<Backspace>", run = "leave" },
+    { on = "<Home>",      run = "arrow top" },
+    { on = "<End>",       run = "arrow bot" },
+
+    { on = "<C-c>",       run = "yank" },
+    { on = "<C-x>",       run = "yank --cut" },
+    { on = "<C-v>",       run = "paste" },
+    { on = "<Delete>",    run = "remove" },
+    { on = "<F2>",        run = "rename" },
+    { on = "<C-a>",       run = "toggle_all --state=on" },
+    { on = "<C-S-a>",     run = "escape" },
+    { on = "<C-S-n>",     run = "create --dir" },
+    { on = "<C-S-c>",     run = "copy path" },
+    { on = "<C-S-v>",     run = "paste" },
+
+    { on = "<C-f>",       run = "search --via=fd" },
+    { on = "<F3>",        run = "find" },
+    { on = "<C-g>",       run = "filter" },
+    { on = "<C-s>",       run = "sort alphabetical" },
+
+    { on = "<C-t>",       run = "tab_create" },
+    { on = "<C-w>",       run = "tab_close" },
+    { on = "<Tab>",       run = "tab_switch 1" },
+    { on = "<S-Tab>",     run = "tab_switch -1" },
+
+    { on = "q",           run = "quit" },
+    { on = "<F1>",        run = "help" },
+    { on = "~",           run = "help" },
+    { on = "<C-h>",       run = "hidden toggle" },
+    { on = "<C-o>",       run = "open --interactive" },
+    { on = "<C-S-p>",     run = "plugin" },
+    { on = "<F5>",        run = "refresh" },
+
+    { on = "<Esc>",       run = [ "escape --all", "unyank" ] },
+    { on = "<S-Up>",      run = [ "toggle", "arrow -1" ] },
+    { on = "<S-Down>",    run = [ "toggle", "arrow 1" ] },
+]

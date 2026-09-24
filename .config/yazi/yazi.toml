@@ -1,0 +1,9 @@
+[mgr]
+show_hidden = true
+show_symlink = true
+tab_size = 4
+
+[opener]
+edit = [
+    { run = 'nano %s', block = true, for = "unix" },
+]
