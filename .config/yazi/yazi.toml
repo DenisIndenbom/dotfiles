@@ -7,3 +7,12 @@ tab_size = 4
 edit = [
     { run = 'nano %s', block = true, for = "unix" },
 ]
+
+[plugin]
+prepend_previewers = [
+    { mime = "*executable*", run = "exiftool" },    
+]
+prepend_fetchers = [
+    { url = "*", run = "git", group = "git" },
+    { url = "*/", run = "git", group = "git" },
+]

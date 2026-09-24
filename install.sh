@@ -74,7 +74,7 @@ packages=(
     # X11 utilities
     xdo xdotool xclip xidlehook xss-lock xkb-switch
     # Utilities
-    ffmpeg gpick imagemagick maim feh yad brightnessctl playerctl
+    ffmpeg gpick imagemagick maim feh yad brightnessctl playerctl trash-cli exiftool
     # Fonts
     consolas-font ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-roboto ttf-sarasa-gothic
     # Power management
@@ -84,9 +84,9 @@ packages=(
     # Theming
     catppuccin-cursors-mocha catppuccin-gtk-theme-mocha lxappearance
     # Apps
-    gvfs thunar firefox ranger neofetch cava
+    gvfs thunar yazi firefox neofetch cava
     # Archives
-    unzip
+    unzip 7zip
 )
 
 # SDDM theme configuration

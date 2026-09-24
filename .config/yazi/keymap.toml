@@ -20,9 +20,8 @@ keymap = [
     { on = "<C-S-c>",     run = "copy path" },
     { on = "<C-S-v>",     run = "paste" },
 
-    { on = "<C-f>",       run = "search --via=fd" },
-    { on = "<F3>",        run = "find" },
-    { on = "<C-g>",       run = "filter" },
+    { on = "<F3>",        run = "search --via=fd" },
+    { on = "<C-f>",       run = "filter" },
     { on = "<C-s>",       run = "sort alphabetical" },
 
     { on = "<C-t>",       run = "tab_create" },
@@ -41,4 +40,9 @@ keymap = [
     { on = "<Esc>",       run = [ "escape --all", "unyank" ] },
     { on = "<S-Up>",      run = [ "toggle", "arrow -1" ] },
     { on = "<S-Down>",    run = [ "toggle", "arrow 1" ] },
+
+    { on = "<S-c>",       run = [ "plugin compress" ] },
+    { on = "<C-m>",       run = [ "plugin chmod" ] },
+    { on = "<C-S-m>",     run = [ "plugin mount" ] },
+    { on = "<C-S-t>",     run = [ "plugin omni-trash" ] }
 ]
