@@ -1,9 +1,10 @@
 # --- MODIFIER ---
-set $mod Mod4
+set $mod     Mod4
+set $term    ~/.config/scripts/utilities/terminal.sh
+set $scripts ~/.config/scripts
 
 # --- AUTOSTART ---
-exec --no-startup-id ~/.config/scripts/system/autostart.sh
-exec --no-startup-id Telegram -autostart
+exec --no-startup-id $scripts/system/autostart.sh
 
 # --- APPEARANCE ---
 font pango:monospace 8
@@ -41,37 +42,37 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # --- TERMINAL ---
-bindsym $mod+Return         exec --no-startup-id ~/.config/scripts/utilities/terminal.sh
-bindsym $mod+Shift+Return   exec --no-startup-id ~/.config/scripts/utilities/terminal.sh --float
+bindsym $mod+Return         exec --no-startup-id $term
+bindsym $mod+Shift+Return   exec --no-startup-id $term --float
 
 # --- MENUS ---
-bindsym $mod+d         exec --no-startup-id ~/.config/scripts/menu/launcher.sh
-bindsym $mod+p         exec --no-startup-id ~/.config/scripts/menu/power.sh
-bindsym $mod+m         exec --no-startup-id ~/.config/scripts/menu/player.sh
-bindsym $mod+Shift+n   exec --no-startup-id ~/.config/scripts/menu/network.sh
-bindsym $mod+Shift+b   exec --no-startup-id ~/.config/scripts/menu/bluetooth.sh
-bindsym $mod+Shift+m   exec --no-startup-id ~/.config/scripts/menu/sound.sh
-bindsym $mod+Shift+w   exec --no-startup-id ~/.config/scripts/menu/wallpaper.sh
-bindsym $mod+Print     exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --menu
+bindsym $mod+d       exec --no-startup-id $scripts/menu/launcher.sh
+bindsym $mod+p       exec --no-startup-id $scripts/menu/power.sh
+bindsym $mod+m       exec --no-startup-id $scripts/menu/player.sh
+bindsym $mod+Shift+n exec --no-startup-id $scripts/menu/network.sh
+bindsym $mod+Shift+b exec --no-startup-id $scripts/menu/bluetooth.sh
+bindsym $mod+Shift+m exec --no-startup-id $scripts/menu/sound.sh
+bindsym $mod+Shift+w exec --no-startup-id $scripts/menu/wallpaper.sh
+bindsym $mod+Print   exec --no-startup-id $scripts/menu/screenshot.sh
 
 # --- APPS ---
 bindsym $mod+k exec --no-startup-id keepassxc
-bindsym $mod+r exec --no-startup-id alacritty -e ranger
+bindsym $mod+r exec --no-startup-id $term -e yazi
 
 # --- UTILITIES ---
-bindsym $mod+l exec --no-startup-id ~/.config/scripts/utilities/lockscreen.sh
+bindsym $mod+l exec --no-startup-id $scripts/utilities/lockscreen.sh
 
 # --- SCREENSHOTS ---
-bindsym $mod+Shift+s   exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --area
-bindsym Print          exec --no-startup-id ~/.config/scripts/utilities/screenshot.sh --shot
+bindsym $mod+Shift+s exec --no-startup-id $scripts/utilities/screenshot.sh --area
+bindsym Print        exec --no-startup-id $scripts/utilities/screenshot.sh --shot
 
 # --- BRIGHTNESS & VOLUME ---
-bindsym XF86MonBrightnessUp   exec --no-startup-id ~/.config/scripts/utilities/brightness.sh --up
-bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/scripts/utilities/brightness.sh --down
+bindsym XF86MonBrightnessUp   exec --no-startup-id $scripts/utilities/brightness.sh --up
+bindsym XF86MonBrightnessDown exec --no-startup-id $scripts/utilities/brightness.sh --down
 
-bindsym XF86AudioRaiseVolume  exec --no-startup-id ~/.config/scripts/utilities/volume.sh --up
-bindsym XF86AudioLowerVolume  exec --no-startup-id ~/.config/scripts/utilities/volume.sh --down
-bindsym XF86AudioMute         exec --no-startup-id ~/.config/scripts/utilities/volume.sh --mute
+bindsym XF86AudioRaiseVolume  exec --no-startup-id $scripts/utilities/volume.sh --up
+bindsym XF86AudioLowerVolume  exec --no-startup-id $scripts/utilities/volume.sh --down
+bindsym XF86AudioMute         exec --no-startup-id $scripts/utilities/volume.sh --mute
 
 # --- MEDIA CONTROLS ---
 set $players spotify,%any,firefox,chromium,brave,mpd
@@ -95,6 +96,12 @@ bindsym $mod+Shift+Down  move down
 bindsym $mod+Shift+Up    move up
 bindsym $mod+Shift+Right move right
 
+# Window resizement
+bindsym $mod+Ctrl+Right resize grow width 20
+bindsym $mod+Ctrl+Up    resize shrink height 20
+bindsym $mod+Ctrl+Down  resize grow height 20
+bindsym $mod+Ctrl+Left  resize shrink width 20 
+
 # Layout controls
 bindsym $mod+v split toggle
 bindsym $mod+f fullscreen toggle
@@ -103,8 +110,8 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # Floating & focus toggles
-bindsym $mod+space          floating toggle
-bindsym $mod+Shift+space    focus mode_toggle
+bindsym $mod+space       floating toggle
+bindsym $mod+Shift+space focus mode_toggle
 
 # --- WORKSPACES ---
 # Define workspace names
@@ -145,8 +152,8 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # Move the focused workspace to the right/left monitor
-bindsym $mod+Ctrl+Right move workspace to output right
-bindsym $mod+Ctrl+Left move workspace to output left
+bindsym $mod+Ctrl+Shift+Right move workspace to output right
+bindsym $mod+Ctrl+Shift+Left  move workspace to output left
 
 # --- SYSTEM CONTROLS ---
 bindsym $mod+Shift+c reload

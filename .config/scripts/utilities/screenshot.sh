@@ -57,32 +57,6 @@ timer() {
 	screen
 }
 
-menu() {
-	config="$HOME/.config/rofi/screen.rasi"
-
-	screen=""
-	area="󰗆"
-	window=""
-	timer="󰄉"
-
-	chosen="$(printf "%s\n%s\n%s\n%s\n" "$screen" "$area" "$window" "$timer" | rofi -theme "$config" -p 'Take Screenshot' -dmenu -selected-row 0 -theme-str 'listview {lines: 4;}')"
-
-	case $chosen in
-	"$screen")
-		screen
-		;;
-	"$area")
-		area
-		;;
-	"$window")
-		window
-		;;
-	"$timer")
-		timer
-		;;
-	esac
-}
-
 docs() {
 	echo "
 Usage:	screenshot [Options]
@@ -92,7 +66,6 @@ Options:
     --window -  Take screenshot of the focused window
     --area	 -	Take screenshot of the selected area
     --timer	 -	Set a custom timer to take a screenshot
-    --menu	 -	Opens a gui selector
 	"
 }
 
@@ -108,9 +81,6 @@ case $1 in
 	;;
 --timer)
 	timer
-	;;
---menu)
-	menu
 	;;
 --help | *)
 	docs

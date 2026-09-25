@@ -1,15 +1,16 @@
 #!/bin/sh
 
-config=".config/alacritty/alacritty.toml"
-
-case $1 in
+case "$1" in
   --float)
-    alacritty --class 'alacritty_floating' --config-file "$config"
-  ;;
+    class='alacritty_floating'
+    ;;
   --full)
-    alacritty --class 'alacritty_fullscreen' --config-file "$config"
-  ;;
+    class='alacritty_fullscreen'
+    ;;
   *)
-    alacritty --config-file "$config" $2 $3
-  ;;
+    exec alacritty "$@"
+    ;;
 esac
+
+shift
+exec alacritty --class "$class" "$@"

@@ -26,8 +26,8 @@ keymap = [
 
     { on = "<C-t>",       run = "tab_create" },
     { on = "<C-w>",       run = "tab_close" },
-    { on = "<Tab>",       run = "tab_switch 1" },
-    { on = "<S-Tab>",     run = "tab_switch -1" },
+    { on = "<Tab>",       run = "tab_switch --relative +1" },
+    { on = "<S-Tab>",     run = "tab_switch --relative -1" },
 
     { on = "q",           run = "quit" },
     { on = "<F1>",        run = "help" },

@@ -73,8 +73,8 @@ packages=(
     bluez-utils networkmanager networkmanager-dmenu
     # X11 utilities
     xdo xdotool xclip xidlehook xss-lock xkb-switch
-    # Utilities
-    ffmpeg gpick imagemagick maim feh yad brightnessctl playerctl trash-cli exiftool
+    # Utilitieso
+    ffmpeg gpick imagemagick maim feh yad brightnessctl playerctl ueberzugpp trash-cli exiftool
     # Fonts
     consolas-font ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-roboto ttf-sarasa-gothic
     # Power management
